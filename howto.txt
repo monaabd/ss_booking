@@ -1,0 +1,168 @@
+<< Set up MongoDB
+
+Open cmd at the mongoDB installation folder.
+C:\Program Files\MongoDB\Server\3.4
+
+Here create data folder.
+Inside that one create db folder.
+
+set database path to that folder: 
+mongod --dorectoryperdb --dbpath C:\Program Files\MongoDB\Server\3.4\data\db
+
+open cmd inside mongoDB installation folder: start server
+mongod
+
+--------------------------------------------------------------
+<< Set up files 
+
+make a project folder.
+
+Make a package.json file.
+npm init
+
+Create app.js
+
+inside json file:
+"scripts":{"start":"node app"}
+now npm start runs file.
+
+install nodemon.
+use nodemon to start webserver to avoid having to respart all the time.
+
+--------------------------------------------------------------
+<< packages.
+1. Express
+
+Install Express 
+npm install express
+
+const express = require('express');
+const app = express();
+
+--------------------------------------------------------------
+<< routes.
+
+app.get('/', function(req, res){
+  });
+
+--------------------------------------------------------------
+<< start web server.
+
+app.listen(3000, function(){
+  console.log('Server started on port 3000...');
+});
+
+--------------------------------------------------------------
+NOW web server works and displays content.
+--------------------------------------------------------------
+<< Add pugs.
+
+npm install pug
+
+Set the path to the viewengine. We can use the build in module 'path' to make this easier.
+
+const path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+create new folder called views.
+inside the folder create index.pug.
+
+change the app.get to render the pug content:
+app.get('/', function(req, res){
+  res.render('index', {title:'Booking system'});
+});
+
+inside the pug add a title.
+h1 #{title}
+--------------------------------------------------------------
+NOW the webserver gets page content from pugs.
+--------------------------------------------------------------
+<< Add new database and collection.
+
+start mongod
+and mongo
+in two separate terminals.
+
+in the shell, create a new database: use booking
+
+create a collection: db.createCollection('vehicles')
+
+insert data OR wait and insert data via file.
+
+Do this in a separate cmd! not the shell.
+mongoimport --db booking --jsonArray --collection vehicles --file C:\Users\Christina\Desktop\ss_booking\import.json
+
+--------------------------------------------------------------
+<< mongoose.
+
+npm install mongoose
+
+const mongoose = require('mongoose');
+
+add new folder: config
+add new file inside this folder: database.js
+Here the path to the database is set: database:'mongodb://localhost:27017/booking'
+
+Add the link to app.js:
+const config = require('./config/database');
+
+Now connect to the database when webserver starts:
+mongoose.connect(config.database); 
+
+<- config.database is the folder and the file we just created.
+
+let db = mongoose.connection;
+
+// message when connected. only ONCE
+db.once('open', function(){
+  console.log('Connected to MongoDB');
+});
+
+// show errors. stays on all the time.
+db.on('error', function(err){
+  console.log(err);
+});
+
+--------------------------------------------------------------
+<< make models & schema.
+
+make a new folder: models.
+inside create new model file.
+
+first, let mongoose = require('mongoose');
+we need mongoose to handle the connection to the db.
+
+Then we create a new schema.
+let vehicleSchema = mongoose.Schema({  // stuff });
+
+Then export the data, so app.js can access it.
+let Vehicle = module.exports = mongoose.model('Vehicle', vehicleSchema);
+
+--------------------------------------------------------------
+<< connect db to webpage content.
+
+Bring the model to app.js
+let Vehicle = require('./models/vehicle');
+
+add model data to app.get
+
+app.get('/', function(req, res){
+  Vehicle.find({}, function(err, vehicles){
+      res.render('index', {
+        title:'Booking system',
+        vehicles: vehicles
+      });
+      });
+});
+
+
+then we change the pug to loop through the array.
+
+ul.list-group
+    each x, i in vehicles
+      li= x.brand + ' ' + x.model
+
+--------------------------------------------------------------
+NOW the website displays content from the database.
+--------------------------------------------------------------
