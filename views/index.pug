@@ -1,7 +1,9 @@
 extends layout
 block content
 	h1 #{title}
-
+	h2 This is the home page
 	ul.list-group
 		each x, i in vehicles
-			li= x.brand + ' ' + x.model
+			if( i <= 2 )
+				li= x.brand + ' ' + x.model
+					img(src=x.imgLink)

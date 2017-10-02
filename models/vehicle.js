@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-// Article Schema
+// Vehicle Schema
 let vehicleSchema = mongoose.Schema({
   name:{
     fordonstyp: String,
@@ -32,7 +32,6 @@ let vehicleSchema = mongoose.Schema({
   },
   dagshyra:{
     type: Number,
-    required: true
   },
 
   imgLink:{

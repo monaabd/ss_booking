@@ -34,7 +34,47 @@ app.set('view engine', 'pug');
 app.get('/', function(req, res){
   Vehicle.find({}, function(err, vehicles){
       res.render('index', {
-        title:'Booking system',
+        title:'Vehicles',
+        vehicles: vehicles
+      });
+      });
+});
+
+// Vehicles Route
+app.get('/vehicles', function(req, res){
+  Vehicle.find({}, function(err, vehicles){
+      res.render('vehicles', {
+        title:'Vehicles',
+        vehicles: vehicles
+      });
+      });
+});
+
+// Book a vehicle Route
+app.get('/book', function(req, res){
+  Vehicle.find({}, function(err, vehicles){
+      res.render('book', {
+        title:'Choose date',
+        vehicles: vehicles
+      });
+      });
+});
+
+// Admin Route
+app.get('/admin', function(req, res){
+  Vehicle.find({}, function(err, vehicles){
+      res.render('admin', {
+        title:'Admin page',
+        vehicles: vehicles
+      });
+      });
+});
+
+// Edit Route
+app.get('/edit', function(req, res){
+  Vehicle.find({}, function(err, vehicles){
+      res.render('edit', {
+        title:'Edit vehicle',
         vehicles: vehicles
       });
       });
