@@ -3,7 +3,7 @@ extends layout
 block content
 	h1 #{title}
 
-	form(method="post", action="/vehicles/add")
+	form(method="post", action="edit")
 		label Name:
 		input(name="title", type="text")
 		br
@@ -16,4 +16,4 @@ block content
 		label Date:
 		input(name="title", type="text")
 		br
-		button Update
+		input(type="submit", value="Update") 

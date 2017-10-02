@@ -3,11 +3,11 @@ extends layout
 block content
 	h1 #{title}
 
-	form(method="post", action="/vehicles/add")
+	form(method="post", action="book")
 		label Pick up date:
 		input(name="title", type="date")
 		br
 		label Return date:
 		input(name="title", type="date")
 		br
-		button Book now
+		input(type="submit", value="Book now") 

@@ -28,7 +28,10 @@ let Vehicle = require('./models/vehicle');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// where to find files.
+app.use(express.static('public'));
 
+/////////// ROUTES ///////////////
 
 // Home Route
 app.get('/', function(req, res){
@@ -60,6 +63,12 @@ app.get('/book', function(req, res){
       });
 });
 
+// ADD POST request for a new booked vehicle.
+app.post('/book', function(req, res){
+  console.log('submitted');
+  return;
+});
+
 // Admin Route
 app.get('/admin', function(req, res){
   Vehicle.find({}, function(err, vehicles){
@@ -80,7 +89,12 @@ app.get('/edit', function(req, res){
       });
 });
 
-app.use(express.static('public'));
+// ADD POST request for editing an existing vehicle.
+app.post('/edit', function(req, res){
+  console.log('submitted');
+  return;
+});
+
 
 // Start Server
 app.listen(3000, function(){
