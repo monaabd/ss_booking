@@ -1,6 +1,7 @@
+extends layout
+block content
+	h1 #{title}
 
-h1 #{title}
-
-ul.list-group
-    each x, i in vehicles
-      li= x.brand + ' ' + x.model
+	ul.list-group
+		each x, i in vehicles
+			li= x.brand + ' ' + x.model

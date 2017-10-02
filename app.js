@@ -40,6 +40,7 @@ app.get('/', function(req, res){
       });
 });
 
+app.use(express.static('public'));
 
 // Start Server
 app.listen(3000, function(){

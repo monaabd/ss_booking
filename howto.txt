@@ -166,3 +166,17 @@ ul.list-group
 --------------------------------------------------------------
 NOW the website displays content from the database.
 --------------------------------------------------------------
+<< style the pages
+
+make a new pug. 
+layout.pug
+here insert header, footer, block content etc. and stylesheet link.
+
+make a new folder: public
+inside a new folder: stylesheets:
+inside here: the style.css which holds all CSS rules.
+
+inside app.js add this:
+app.use(express.static('public'));
+
+--------------------------------------------------------------
