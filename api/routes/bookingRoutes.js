@@ -2,7 +2,6 @@
 module.exports = function(app) {
   var booking = require('../controllers/bookingController');
 
-  // todoList Routes
   app.route('/cars')
     .get(booking.list_all_cars)
     .post(booking.create_a_car);
