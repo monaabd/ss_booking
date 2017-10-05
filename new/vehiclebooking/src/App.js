@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import Carlist from './carlist';
+import Navigation from './navigation';
+import Footer from './footer';
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <div>
-            <img src="logo.gif" />
-            <ul>
-              <li><a href="#news">Admin login</a></li>
-              <li><a className="active" href="#home">Vehicles</a></li>
-            </ul>
-          </div>
+      <div className="container">
+          <Navigation />
           <div id="bgcar">
             <Carlist />
           </div>
+          <Footer />
       </div>
     );
   }

@@ -1,0 +1,27 @@
+{
+  "name": "booking",
+  "version": "1.0.0",
+  "description": "Group project in serverside course",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "mongoose": "^4.11.13",
+    "nodemon": "^1.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lunapollo/ss_booking.git"
+  },
+  "author": "rikard, mona, mira, christina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lunapollo/ss_booking/issues"
+  },
+  "homepage": "https://github.com/lunapollo/ss_booking#readme"
+}
