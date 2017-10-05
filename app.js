@@ -1,9 +1,8 @@
-
 // Detta skapar ett rest api, för att starta server kör man server.js i consolen
 
 var express = require('express'),
   app = express(),
-  port = process.env.PORT || 3000,
+  port = process.env.PORT || 4000,
   mongoose = require('mongoose'),
   Vehicle = require('./api/models/vehicle'),
   bodyParser = require('body-parser');
@@ -36,9 +35,8 @@ app.listen(port)
 console.log('RESTful API server started on: ' + port);;
 
 // Ger felmeddelande när man skriver in en felaktig path
-/*
+
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
 });
-*/
 
