@@ -4,10 +4,13 @@
   "description": "Group project in serverside course",
   "main": "app.js",
   "dependencies": {
+    "babel": "^6.23.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.1",
     "mongoose": "^4.11.13",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {},
   "scripts": {
