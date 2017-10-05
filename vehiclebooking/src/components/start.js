@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../css/App.css';
 
 
-class Admin extends Component {
+class Start extends Component {
   constructor(props){
     super(props);
   }
   render() {
     return (
-      <div>
-        <h1>Admin view</h1>
+      <div id="bgcar">
+        <h1>Start view</h1>
       </div>
     );
   }
 
 }
 
-export default Admin;
+export default Start;

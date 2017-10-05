@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
-import Carlist from './carlist';
-import Start from './start';
-import Navbar from './navbar';
-import Admin from './admin';
-import Vehicles from './vehicles';
+import './css/App.css';
+import Start from './components/start';
+import Navbar from './components/navbar';
+import Admin from './components/admin';
+import Vehicles from './components/vehicles';
+import Footer from './components/footer';
 
 class App extends Component {
   constructor(props){
@@ -41,6 +41,7 @@ class App extends Component {
               clickAdmin={this.clickAdmin}
             />
             <Start />
+            <Footer />
         </div>
       );
     }
@@ -53,6 +54,7 @@ class App extends Component {
               clickAdmin={this.clickAdmin}
             />
             <Vehicles />
+            <Footer />
         </div>
       );
     }
@@ -65,6 +67,7 @@ class App extends Component {
               clickAdmin={this.clickAdmin}
             />
             <Admin />
+            <Footer />
         </div>
       );
     }

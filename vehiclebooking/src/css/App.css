@@ -24,7 +24,7 @@ li a:hover {
 }
 
 #bgcar{
-    background-image:url('car.jpg');
+    background-image:url('../media/car.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
