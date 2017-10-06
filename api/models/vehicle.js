@@ -37,10 +37,10 @@ let vehicleSchema = mongoose.Schema({
     type: Number,
   },
     dates: {
-      availability: true,
-      from: "",
-      to: ""
+    availability: Boolean,
+    date[{from: Number, to: Number}]
     }
+    
 });
 
 let Vehicle = module.exports = mongoose.model('Vehicle', vehicleSchema);
