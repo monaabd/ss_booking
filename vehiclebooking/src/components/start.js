@@ -3,9 +3,11 @@ import '../css/App.css';
 
 
 class Start extends Component {
-  constructor(props){
+  
+  /*constructor(props){
     super(props);
-  }
+  }*/
+
   render() {
     return (
       <div id="bgcar">

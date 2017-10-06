@@ -7,8 +7,6 @@ var express = require('express'),
   Vehicle = require('./api/models/vehicle'),
   bodyParser = require('body-parser');
 
-  app.use(express.static(__dirname + '/public'));
-
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/vehiclesDB');

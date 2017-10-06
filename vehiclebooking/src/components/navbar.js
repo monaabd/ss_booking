@@ -3,9 +3,9 @@ import '../css/App.css';
 
 
 class Navbar extends Component {
-  constructor(props){
+  /*constructor(props){
     super(props);
-  }
+  }*/
   render() {
     return (
       <div>
