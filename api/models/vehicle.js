@@ -37,9 +37,8 @@ let vehicleSchema = mongoose.Schema({
     type: Number,
   },
     dates: {
-      availability: true,
-      from: "",
-      to: ""
+      availability: Boolean,
+      date[{from: Number, to: Number}]
     }
 });
 
