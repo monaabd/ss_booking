@@ -22,6 +22,10 @@ li a {
 li a:hover {
     background-color: #111;
 }
+.adminList{
+  margin: 10px;
+  border: 1px solid black;
+}
 
 #bgcar{
     background-image:url('../media/car.jpg');
