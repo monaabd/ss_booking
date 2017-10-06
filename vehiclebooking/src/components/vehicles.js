@@ -8,7 +8,13 @@ class Vehicles extends Component {
   this.apiRequest = this.apiRequest.bind(this);
   }
   apiRequest(){
-  fetch('/vehicles')
+  fetch('/vehicles', { 
+        headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
     .then(res => res.json())
     .then(users => console.log( users ));
   }
