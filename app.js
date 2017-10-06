@@ -7,6 +7,8 @@ var express = require('express'),
   Vehicle = require('./api/models/vehicle'),
   bodyParser = require('body-parser');
 
+  app.use(express.static(__dirname + '/public'));
+
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/vehiclesDB');
@@ -24,6 +26,7 @@ db.on('error', function(err){
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 var routes = require('./api/routes/bookingRoutes'); //importing route
 routes(app); //register the route

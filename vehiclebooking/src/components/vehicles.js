@@ -5,49 +5,13 @@ import '../css/App.css';
 class Vehicles extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      vehicles:[],
-    }
-    
   this.apiRequest = this.apiRequest.bind(this);
-
   }
-  // API //
   apiRequest(){
-    
-      //var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-      // url can be: 
-      //http://localhost:4000/  or
-      //127.0.0.1:4000/   or
-      // and with a proxy: just /vehicles
-      
-     var url = '/vehicles'; // this is Christinas IP
-      var x = new XMLHttpRequest();
-      x.open('GET', url, true);
-
-      x.onreadystatechange = function() {
-
-                if (/^POST/i.test('GET')) {
-                    x.setRequestHeader('Accept','application/json; charset=utf-8');
-                }
-                if (x.status === 200 && x.readyState === 4) {
-                //parse string to object
-                //let json = JSON.parse(x.responseText);
-                console.log('good');
- 
-                console.log(x.responseText);
-                } else if (x.status !== 200) {
-                // AJAX failiure report
-                console.log('ajax error');
-                }
-
-            }; //end ajax
-            x.send();
-
-
-};
-
-
+  fetch('/vehicles')
+    .then(res => res.json())
+    .then(users => console.log( users ));
+  }
   render() {
     return (
       <div>

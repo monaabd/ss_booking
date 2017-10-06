@@ -10,10 +10,10 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
-    "start": "set PORT=3006 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "127.0.0.1:4000/"
+  "proxy": "http://localhost:4000"
 }
