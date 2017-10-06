@@ -1,4 +1,31 @@
+.App {
+  text-align: center;
+}
 
+div.container {
+    width: 100%;
+}
+
+footer {
+    padding: 1em;
+    color: white;
+    background-color: darkslategray;
+    clear: left;
+    text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 ul {
     list-style-type: none;
@@ -10,11 +37,6 @@ ul {
 
 li {
     float: right;
-}
-
-#vehicles li
-{
-    float: none;
 }
 
 li a {
@@ -33,6 +55,7 @@ j
 #logoText {
     font-size: 18pt;
 }
+
 
 #bgcar{
     background-image:url('../media/car.jpg');
