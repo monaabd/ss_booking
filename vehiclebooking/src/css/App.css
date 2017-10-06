@@ -1,3 +1,4 @@
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -8,6 +9,11 @@ ul {
 
 li {
     float: right;
+}
+
+#vehicles li
+{
+    float: none;
 }
 
 li a {
