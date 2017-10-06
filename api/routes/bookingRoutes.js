@@ -4,9 +4,9 @@ module.exports = function(router) {
   var booking = require('../controllers/bookingController');
 
   // Load index.html as a start page
-  /*router.get("/", (req, res) =>{
+  router.get("/", (req, res) =>{
     res.sendFile(__dirname + "index.html");
-  });*/
+  });
 
   // Minimalized code to use different functions on the same path
 
