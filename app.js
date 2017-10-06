@@ -27,6 +27,7 @@ db.on('error', function(err){
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
 var routes = require('./api/routes/bookingRoutes'); //importing route
 routes(app); //register the route
 
