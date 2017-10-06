@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import VehicleList from './vehicleList';
 
 
 class Vehicles extends Component {
@@ -40,11 +41,7 @@ console.log(this.state.vehicles);
 
   render() {
     return (
-      <div>
-        <h1>Vehicles view</h1>
-        <ul id="vehicles"></ul>
-        <button onClick={this.apiRequest}>Click to request db from API</button>
-      </div>
+        <VehicleList apiRequest={this.apiRequest} />
     );
   }
 
