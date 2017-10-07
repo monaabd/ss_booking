@@ -12,8 +12,7 @@ class Calendar1_in_sorting extends Component {
 constructor (props) {
     super(props)
     this.state = {
-      startDate: moment(),
-      from: ''
+      startDate: moment()
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,7 +20,6 @@ constructor (props) {
   handleChange(date) {
     this.setState({
       startDate: date,
-      from: date._d
     });
     let thedate = JSON.stringify(date);;
     console.log(thedate);
