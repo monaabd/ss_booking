@@ -2,7 +2,7 @@
 /* ===============
    GLOBAL  
    =============== */
->>>>>>> master
+
 .App {
   text-align: center;
 }
@@ -31,6 +31,11 @@ header {
   to { transform: rotate(360deg); }
 }
 
+#vehicleslistbox button {
+    width: 70px;
+    height: 50px;
+    float:right;
+}
 
 /* ===============
    LIST  
