@@ -21,8 +21,11 @@ constructor (props) {
     this.setState({
       startDate: date,
     });
+    //we get an object, which we have to make to a string to put as state.
     let thedate = JSON.stringify(date);;
     console.log(thedate);
+
+    //this is the function to update state in the dateSorting function.
     this.props.change(thedate);
   }
  

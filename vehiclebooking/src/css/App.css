@@ -4,19 +4,19 @@
    =============== */
 
 li {
-    border: 1px solid red;
+    border: ;
 }   
 
 #vehicleslistbox {
-    border: 2px solid blue;
+    border: ;
 }
 
 p {
-    border: 1px solid yellow;
+    border: ;
 }
 
 img {
-    border: 1px solid green;
+    border: ;
 }
 
 /* ===============
@@ -27,6 +27,8 @@ img {
     flex-direction:row-wrap;
     width:80%;
     margin:auto;
+    padding-left:0;
+    padding-right: 0;
     flex-wrap: wrap;
 }
 
@@ -56,7 +58,8 @@ img {
 
 #vehicles{
     max-width: 80%;
-    overflow:scroll;
+    /*overflow:scroll;*/
+    background-color: grey;
 }
 
 footer {
@@ -89,21 +92,32 @@ header {
    LIST  
    =============== */
 
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
+#datesorting{
+    background-color: grey;
+    width: 80%;
+    margin:auto;
 }
+
+/* ===============
+  Calendar box  
+=============== */
+
+
+
 
 #vehicles ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: ;
+    background-color: grey;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 li {
@@ -126,7 +140,8 @@ li a:hover {
 
 #vehicles li {
     float: none;
-    color:white;
+    color:black;
+    background-color: lightgrey;
 }
 
 li button{

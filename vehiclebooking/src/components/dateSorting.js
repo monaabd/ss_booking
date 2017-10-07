@@ -19,7 +19,7 @@ class DateSorting extends Component {
   }
     render() {
     	return(
-            <div>
+            <div id="datesorting">
             <p>From: {this.state.from}</p>
             <Calendar1_in_sorting change={this.change}/>  
             </div>
