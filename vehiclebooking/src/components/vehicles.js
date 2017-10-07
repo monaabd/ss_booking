@@ -38,10 +38,12 @@ vehicles : [data]
 console.log('vehicles:');
 console.log(this.state.vehicles);
 }
-
   render() {
+    if (this.state.cars.length <= 0){
     return (
+
         <VehicleList apiRequest={this.apiRequest} />
+
     );
   }
 
