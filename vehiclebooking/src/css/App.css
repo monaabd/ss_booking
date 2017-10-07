@@ -1,9 +1,38 @@
+.App {
+  text-align: center;
+}
+
+div.container {
+    width: 100%;
+}
+
+footer {
+    padding: 1em;
+    color: white;
+    background-color: darkslategray;
+    clear: left;
+    text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: darkslategray;
 }
 
 li {
@@ -22,6 +51,11 @@ li a {
 li a:hover {
     background-color: #111;
 }
+j
+#logoText {
+    font-size: 18pt;
+}
+
 
 #bgcar{
     background-image:url('../media/car.jpg');
@@ -30,3 +64,5 @@ li a:hover {
     max-width: 100%;
     height: 80vh;
     width: auto\9; /* ie8 */}
+
+
