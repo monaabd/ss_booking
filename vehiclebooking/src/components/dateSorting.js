@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import Calendar1_in_sorting from './calendar1_in_sorting';
 import Calendar2_in_sorting from './calendar2_in_sorting';
-
+import Calendar from 'react-input-calendar';
 
 class DateSorting extends Component {
 	constructor(props){
@@ -12,11 +12,8 @@ class DateSorting extends Component {
 
     render() {
     	return(
-    		<div>
-    			<h1>Date sorting</h1>
-    			<Calendar1_in_sorting />
-    			<Calendar2_in_sorting />
-    		</div>	
+            <Calendar format='DD/MM/YYYY' date='01/01/2016' />
+            
     		);
     }
   
