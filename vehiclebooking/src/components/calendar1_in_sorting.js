@@ -1,30 +1,40 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 
 
 class Calendar1_in_sorting extends Component {
-	constructor(props){
-    super(props);
+constructor (props) {
+    super(props)
     this.state = {
-    }
-    this.pick = this.pick.bind(this);
+      startDate: moment()
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-
-  pick(){
-    console.log('pick a date')
+ 
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
   }
-
-    render() {
-    	return(
-        <div>
-    		  <h2>Calendar one</h2>
-          
-          
-        </div>
-
-    		);
-    } //end render
-  } //end component
+ 
+  render() {
+    return (
+      <DatePicker
+        todayButton={"Today"}
+        dateFormat="YYYY/MM/DD"
+        selected={this.state.startDate}
+        onChange={this.handleChange}
+        withPortal
+        showWeekNumbers
+        monthsShown={1} />
+    );
+  }
+}
 
 export default Calendar1_in_sorting;
