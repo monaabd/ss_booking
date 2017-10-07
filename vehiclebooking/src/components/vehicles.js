@@ -26,29 +26,59 @@ class Vehicles extends Component {
         // first make an li element for every car.
         var listitem = document.createElement("LI");
         listitem.id = data[i]._id;
+        listitem.className = 'vehicleBox';
 
         // then make a div to hold the data
         var box = document.createElement("DIV");
         box.id = 'vehicleslistbox';
+        box.className = 'individualContainer';
         //->  put box inside li
         listitem.appendChild(box);
 
         // then make a div to hold the text.
         var textbox = document.createElement("p");
+        textbox.className = 'insideOfCont';
 
         // then make a div to hold the image.
         var image = document.createElement("IMG");
+        image.className = 'insideOfCont';
         // set image src to vehicle data
         image.src = data[i].imgLink;
-        image.style.height = 50 + 'px';
+        image.style.width = 200 + 'px';
+        image.style.height = 'auto';
+
+        // then make a div with car name and model
+        var nameModel = document.createElement('DIV');
+        nameModel.className = 'insideOfCont';
+        nameModel.innerHTML = data[i].brand + ', ' + data[i].model;
+
+        // then make a div with driving licence
+        var licence = document.createElement('DIV');
+        licence.className = 'insideOfCont';
+        licence.innerHTML = 'Driving licence: ' + data[i].requiredDrivingLicense;
+
+        // then make a div with gear box
+        var gearBox = document.createElement('DIV');
+        gearBox.className = 'insideOfCont';
+        gearBox.innerHTML = 'Gear box: ' + data[i].gearbox;
+
+        // then make a div with price/day
+        var price = document.createElement('DIV');
+        price.className = 'insideOfCont';
+        price.innerHTML = 'Price/day: ' + data[i].dagshyra;
 
         // then make a button to go to booking.
         var button = document.createElement("button");
         button.innerHTML = 'Book';
+        button.className = 'insideOfCont';
 
         // -> put textbox and image inside box
         box.appendChild(textbox);
         box.appendChild(image);
+        box.appendChild(nameModel);
+        box.appendChild(licence);
+        box.appendChild(gearBox);
+        box.appendChild(price);
         box.appendChild(button);
 
         // then make a text string to display in the textbox.

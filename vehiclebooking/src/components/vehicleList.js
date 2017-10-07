@@ -14,7 +14,7 @@ class VehicleList extends Component {
     		<div>
                 <h1>Vehicles List</h1>
                 <div><DateSorting /></div>
-                <ul id="vehicles"></ul>
+                <ul id="vehicles" className= "vehiclesContainer"></ul>
                 <button onClick={this.props.apiRequest}>Click to request db from API</button>
             </div>	
     		);
