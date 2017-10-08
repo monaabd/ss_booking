@@ -72,7 +72,11 @@ class Vehicles extends Component {
         var button = document.createElement("button");
         button.innerHTML = 'Book';
         button.className = 'insideOfCont';
-        
+        button.onclick = "handleClick()";
+
+       let handleClick= function() {
+            console.log('Helooooo');
+            }
 
         // -> put textbox and image inside box
         box.appendChild(textbox);
