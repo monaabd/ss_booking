@@ -20,7 +20,7 @@ class Vehicles extends Component {
     .then(function(response) {
         return response.json();
     }).then(function(data) {
-        _this.update(data);
+    //    _this.update(data);
 
     for (var i = 0; i < data.length; i++) {
         // first make an li element for every car.
