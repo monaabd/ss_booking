@@ -27,7 +27,7 @@ class DateSorting extends Component {
 
     render() {
     	return(
-            <div>
+            <div id="datesorting">
             <p>From: {this.state.from}</p>
             <p>To: {this.state.to}</p>
             <Calendar_in_sorting changeFrom={this.changeFrom} changeTo= {this.changeTo} />  
