@@ -6,8 +6,9 @@ import DateSorting from './dateSorting';
 class VehicleList extends Component {
 	constructor(props){
     super(props);
-    
     }
+
+
 
     render() {
     	return(

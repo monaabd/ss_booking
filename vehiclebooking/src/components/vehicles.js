@@ -20,6 +20,7 @@ class Vehicles extends Component {
     .then(function(response) {
         return response.json();
     }).then(function(data) {
+    // I made the data load when we open the page and this line makes it load non-stop    
     //    _this.update(data);
 
     for (var i = 0; i < data.length; i++) {
@@ -71,6 +72,7 @@ class Vehicles extends Component {
         var button = document.createElement("button");
         button.innerHTML = 'Book';
         button.className = 'insideOfCont';
+        
 
         // -> put textbox and image inside box
         box.appendChild(textbox);
