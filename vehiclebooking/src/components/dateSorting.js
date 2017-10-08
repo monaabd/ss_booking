@@ -1,27 +1,36 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import Calendar1_in_sorting from './calendar1_in_sorting';
-import Calendar2_in_sorting from './calendar2_in_sorting';
+import Calendar_in_sorting from './calendar_in_sorting';
 
 class DateSorting extends Component {
 	constructor(props){
     super(props);
       this.state = {
-      from: 'nothing'
+      from: 'nothing',
+      to: 'nothing'
     };
-    this.change = this.change.bind(this);
+    this.changeFrom = this.changeFrom.bind(this);
+    this.changeTo = this.changeTo.bind(this);
     }
 
-  change(date) {
+  changeFrom(date) {
     this.setState({
       from: date
     });
   }
+
+  changeTo(date) {
+    this.setState({
+      to: date
+    });
+  }
+
     render() {
     	return(
             <div>
             <p>From: {this.state.from}</p>
-            <Calendar1_in_sorting change={this.change}/>  
+            <p>To: {this.state.to}</p>
+            <Calendar_in_sorting changeFrom={this.changeFrom} changeTo= {this.changeTo} />  
             </div>
     		);
     }
