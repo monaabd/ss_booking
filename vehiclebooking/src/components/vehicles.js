@@ -44,11 +44,10 @@ class Vehicles extends Component {
         var imageBox = document.createElement('DIV');
         imageBox.id = 'imageBox';
         imageBox.style.width = '200px';
-        imageBox.style.height = '150px';
+        imageBox.style.height = '150px'; 
         imageBox.style.border = 'dotted 1px gray';
         imageBox.style.borderRadius = '2px';
         imageBox.style.textAlign = 'center';
-        imageBox.verticalAlign = 'middle';
 
         // then make a div to hold the image.
         var image = document.createElement("IMG");
@@ -87,7 +86,7 @@ class Vehicles extends Component {
 
         // then make a button to go to booking.
         var button = document.createElement("button");
-        button.innerHTML = 'Book';
+        button.innerHTML = 'Book now';
         button.className = 'insideOfCont';
         button.onclick = "handleClick()";
 
@@ -96,7 +95,7 @@ class Vehicles extends Component {
             }
 
         // -> put textbox and image inside box
-        box.appendChild(textbox);
+      //  box.appendChild(textbox);
         box.appendChild(imageBox);
         imageBox.appendChild(image);
         box.appendChild(boxUnderCarImage);
