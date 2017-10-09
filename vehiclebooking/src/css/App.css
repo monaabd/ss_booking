@@ -30,37 +30,46 @@ img {
     padding-left:0;
     padding-right: 0;
     flex-wrap: wrap;
+
+
 }
 
 .individualContainer {
     display:flex;
     flex-direction:column;
-    margin:auto;
+    margin: 20px;
+    align-items: center;
+}
+
+#boxUnderCarImage :first-child {
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+#boxUnderCarImage {
+    width: 150px;
+    height: auto;
 }
 
 .vehicleBox {
     flex:auto;
     margin: 20px;
+    border-radius: 1%;
+    border: dotted 1px gray;
+
 }
 
 .insideOfCont {
     flex:1 1 auto;
-    align-items: center;
 }
 
 .App {
-  text-align: center;
 }
 
 /*div.container {
     width: 100%;
 }*/
 
-#vehicles{
-    max-width: 80%;
-    /*overflow:scroll;*/
-    background-color: grey;
-}
 
 footer {
     padding: 1em;
@@ -86,6 +95,10 @@ header {
     width: 70px;
     height: 50px;
     float:right;
+    color: white;
+    background-color: gray;
+    border-radius: 10%;
+    font-size: 13pt;
 }
 
 /* ===============
@@ -96,6 +109,8 @@ header {
     background-color: grey;
     width: 80%;
     margin:auto;
+    text-align: center;
+    border-radius: 2px;
 }
 
 /* ===============
@@ -110,7 +125,6 @@ header {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: grey;
 }
 
 ul {
@@ -141,7 +155,6 @@ li a:hover {
 #vehicles li {
     float: none;
     color:black;
-    background-color: lightgrey;
 }
 
 li button{
@@ -149,10 +162,9 @@ li button{
     color: black;
     margin-right:1px;
     text-align: center;
-    padding: 5px 5px;
+    padding: 3px 3px;
     text-decoration: none;
-    border: 3px solid cyan;
-}
+}    
 
 li button:hover {
     background-color: black;
@@ -183,3 +195,7 @@ li button:hover {
     height: 25px;
     border:0;
     content: 'Pick a date';}
+
+    #logoText {
+    font-size: 18pt;
+}

@@ -43,10 +43,16 @@ class Vehicles extends Component {
         // then make a div to hold the image.
         var image = document.createElement("IMG");
         image.className = 'insideOfCont';
+
         // set image src to vehicle data
         image.src = data[i].imgLink;
         image.style.width = 200 + 'px';
         image.style.height = 'auto';
+
+        // box including all car specifications
+        var boxUnderCarImage = document.createElement('DIV');
+        boxUnderCarImage.id = 'boxUnderCarImage';
+
 
         // then make a div with car name and model
         var nameModel = document.createElement('DIV');
@@ -81,10 +87,11 @@ class Vehicles extends Component {
         // -> put textbox and image inside box
         box.appendChild(textbox);
         box.appendChild(image);
-        box.appendChild(nameModel);
-        box.appendChild(licence);
-        box.appendChild(gearBox);
-        box.appendChild(price);
+        box.appendChild(boxUnderCarImage);
+        boxUnderCarImage.appendChild(nameModel);
+        boxUnderCarImage.appendChild(licence);
+        boxUnderCarImage.appendChild(gearBox);
+        boxUnderCarImage.appendChild(price);
         box.appendChild(button);
 
         // then make a text string to display in the textbox.
