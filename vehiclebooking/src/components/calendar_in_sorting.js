@@ -42,11 +42,21 @@ handleChangeEnd(date) {
     show that in the availability.
      I don't know why it's not working. I tried doing it with another class, the 
     'vehileBox' (that we declaired in the vehicle.js file) and it worked */
-    var selectedDate = document.getElementsByClassName("react-datepicker__day--range-start");
+   /* var selectedDate = document.getElementsByClassName("react-datepicker__day--range-start");
+
 
     for (let key in selectedDate){
-    console.log(selectedDate[0].innerHTML); //second console output
-    }
+    console.log(selectedDate[0].value); //second console output
+    }  */
+
+    // calculates the number of days between two dates.
+    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    var firstDate = new Date(2008,2,10);
+    var secondDate = new Date(2008,2,22);
+
+    var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+    
+    console.log(diffDays);
 
   }
 
