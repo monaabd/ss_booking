@@ -12,9 +12,12 @@ class Vehicles extends Component {
       vehicles : [],
       bookingid: ''
     };
+
     this.apiRequest = this.apiRequest.bind(this);
     this.update = this.update.bind(this);
     this.booking = this.booking.bind(this);
+    this.apiPost = this.apiPost.bind(this);
+
 
     this.changeFrom = this.changeFrom.bind(this);
     this.changeTo = this.changeTo.bind(this);
@@ -35,10 +38,14 @@ class Vehicles extends Component {
     .then(function(response) {
         return response.json();
     }).then(function(data) {
+       // console.log(data[0].brand);
+        console.log(data);
+
     // I made the data load when we open the page and this line makes it load non-stop    
     //    _this.update(data);
 
     for (var i = 0; i < data.length; i++) {
+        console.log(data[i].brand);
         // first make an li element for every car.
         var listitem = document.createElement("LI");
         listitem.id = data[i]._id;
@@ -133,6 +140,30 @@ class Vehicles extends Component {
 
     }) //end data function
     } // end apiRequest
+
+      apiPost() {
+
+     /* var payload = { 
+            from: 1,
+            to: 2
+      };*/
+
+      var data = new FormData();  
+   //   data.append("json", JSON.stringify(payload));
+
+      fetch("/vehicles", { method: 'POST',
+                           body: data
+                          })
+      .then(function(response) {
+           return response.json(); 
+      }).then(function(data) {
+                console.log(JSON.stringify( data ));
+                console.log(data);
+
+
+      })                
+
+    }
 
     update(data){
     this.setState({
