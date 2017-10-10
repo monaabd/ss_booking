@@ -13,11 +13,15 @@ exports.list_all_vehicles = function(req, res) {
 
 
 exports.create_a_vehicle = function(req, res) {
+  console.log("req.body", req.body, typeof req.body)
+  let validCar = req.body;
+  validCar.rent = Number(validCar.rent);
   var new_vehicle = new Vehicle(req.body);
   new_vehicle.save(function(err, vehicle) {
     if (err)
-      res.send(err);
-    res.json(vehicle);
+      console.log(err);
+    else
+    console.log("Car saved", vehicle);
   });
 };
 

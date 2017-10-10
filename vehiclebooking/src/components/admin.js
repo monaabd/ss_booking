@@ -16,7 +16,9 @@ import UpdateCar from '../components/updateCar';
   componentDidMount() {
     fetch('/vehicles')
       .then(res => res.json())
-      .then(cars => this.setState({ cars }));
+      .then(cars => {
+        this.setState({ cars });
+      });
     }
     chooseCar(event){
       let clickedCar = this.state.cars.find(car => {
