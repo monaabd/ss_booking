@@ -60,7 +60,8 @@ handleChangeEnd(date) {
 
   render() {
     return (
-     <div> 
+     <div id="calendarBox"> 
+      <p className="chooseDate">Pick-up date:</p>
       <DatePicker
         todayButton={"Today"}
         dateFormat="YYYY/MM/DD"
@@ -73,6 +74,7 @@ handleChangeEnd(date) {
         endDate={this.state.endDate}
         onChange={this.handleChangeStart}
       />
+      <p className="chooseDate">Drop-off date:</p>
       <DatePicker 
         todayButton={"Today"}
         dateFormat="YYYY/MM/DD"
