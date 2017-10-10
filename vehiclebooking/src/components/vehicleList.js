@@ -38,6 +38,7 @@ class VehicleList extends Component {
             </div>	
     		);
     }
+}
   
   export default VehicleList;
 
