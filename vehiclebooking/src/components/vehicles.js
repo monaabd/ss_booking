@@ -12,6 +12,7 @@ class Vehicles extends Component {
     };
   this.apiRequest = this.apiRequest.bind(this);
   this.update = this.update.bind(this);
+  this.apiPost = this.apiPost.bind(this);
   }
 
   apiRequest(){
@@ -20,10 +21,14 @@ class Vehicles extends Component {
     .then(function(response) {
         return response.json();
     }).then(function(data) {
+       // console.log(data[0].brand);
+        console.log(data);
+
     // I made the data load when we open the page and this line makes it load non-stop    
     //    _this.update(data);
 
     for (var i = 0; i < data.length; i++) {
+        console.log(data[i].brand);
         // first make an li element for every car.
         var listitem = document.createElement("LI");
         listitem.id = data[i]._id;
@@ -95,7 +100,7 @@ class Vehicles extends Component {
             }
 
         // -> put textbox and image inside box
-      //  box.appendChild(textbox);
+        box.appendChild(textbox);
         box.appendChild(imageBox);
         imageBox.appendChild(image);
         box.appendChild(boxUnderCarImage);
@@ -114,6 +119,30 @@ class Vehicles extends Component {
     } //end for loop
     }) //end data function
     } // end apiRequest
+
+      apiPost() {
+
+     /* var payload = { 
+            from: 1,
+            to: 2
+      };*/
+
+      var data = new FormData();  
+   //   data.append("json", JSON.stringify(payload));
+
+      fetch("/vehicles", { method: 'POST',
+                           body: data
+                          })
+      .then(function(response) {
+           return response.json(); 
+      }).then(function(data) {
+                console.log(JSON.stringify( data ));
+                console.log(data);
+
+
+      })                
+
+    }
 
 update(data){
 this.setState({
