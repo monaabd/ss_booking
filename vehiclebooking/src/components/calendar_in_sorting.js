@@ -66,6 +66,7 @@ handleChangeEnd(date) {
         dateFormat="YYYY/MM/DD"
         showWeekNumbers
         monthsShown={1}
+        minDate={this.state.startDate}
         selected={this.state.startDate}
         selectsStart
         startDate={this.state.startDate}
@@ -78,6 +79,7 @@ handleChangeEnd(date) {
         openToDate={moment("2017-10-08")}
         showWeekNumbers
         monthsShown={1} 
+        minDate={this.state.startDate}
         selected={this.state.endDate}
         selectsEnd
         startDate={this.state.startDate}
