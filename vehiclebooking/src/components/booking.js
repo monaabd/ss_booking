@@ -15,23 +15,24 @@ class Booking extends Component {
     }
 
     checkDate(){
-        console.log('booking');
+
+        console.log(this.props.to);
         console.log(this.props.from);
-        if(this.props.from === '2017-10-10' || this.props.from === undefined){  // YYYY/MM/DD : today
-            console.log(this.props.from);
+        /*
+        if(this.props.from === '2017-10-10' || this.props.from === undefined){  // YYYY/MM/DD : today 
             console.log('From is today');
-
-
         }else{
             console.log('From is another day');
-            console.log(this.props.from); 
-   
         }  
+        */
     }
 
     render() {
     	return(
     		<div>
+                <p>To:{this.props.to}</p>
+                <p>From:{this.props.from}</p>
+
                 <div>{this.checkDate()}</div>
     			<h1>Booking pop-up</h1>
                 <div>{this.props.bookingid}</div> 

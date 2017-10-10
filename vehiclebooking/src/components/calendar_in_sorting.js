@@ -23,7 +23,7 @@ constructor (props) {
     });
     let thedate = JSON.stringify(date);
 
-    this.props.changeTo(thedate); // send date to parent DateSorting
+    this.props.changeFrom(thedate); // send date to parent DateSorting
 
     thedate = thedate.slice(0, 11);
 
@@ -55,9 +55,7 @@ handleChangeEnd(date) {
     var secondDate = new Date(2008,2,22);
 
     var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-    
-    console.log(diffDays);
-
+  
   }
 
   render() {

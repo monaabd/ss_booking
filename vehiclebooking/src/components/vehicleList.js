@@ -22,10 +22,11 @@ class VehicleList extends Component {
   } 
 
   changeTo(date) {
+    this.props.changeTo(date); // send date to parent Vehicles
     this.setState({
       to: date
     });
-    this.props.changeTo(date); // send date to parent Vehicles
+
   }
 
     render() {
