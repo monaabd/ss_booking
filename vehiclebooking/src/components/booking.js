@@ -14,6 +14,7 @@ class Booking extends Component {
     	return(
     		<div>
     			<h1>Booking pop-up</h1>
+                <div>{this.props.bookingid}</div> 
     			<Calendar1_in_booking />
     			<Calendar2_in_booking />
     		</div>	

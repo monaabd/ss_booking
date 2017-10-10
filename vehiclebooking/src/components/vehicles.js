@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import VehicleList from './vehicleList';
+import Booking from './booking';
 
 
 class Vehicles extends Component {
@@ -8,13 +9,24 @@ class Vehicles extends Component {
   constructor(props){
     super(props);
     this.state = {
-      vehicles : []
+      vehicles : [],
+      bookingid: ''
     };
-  this.apiRequest = this.apiRequest.bind(this);
-  this.update = this.update.bind(this);
+    this.apiRequest = this.apiRequest.bind(this);
+    this.update = this.update.bind(this);
+    this.booking = this.booking.bind(this);
   }
 
+    booking(x){
+        console.log('we are now outside api call');
+        console.log(x); // id of button. and also id of vehicle.
+            this.setState({
+            bookingid: x
+            });
+    }
+
   apiRequest(){
+
   const _this = this;
   fetch('/vehicles')
     .then(function(response) {
@@ -87,15 +99,17 @@ class Vehicles extends Component {
         // then make a button to go to booking.
         var button = document.createElement("button");
         button.innerHTML = 'Book now';
+        button.id = data[i]._id;
         button.className = 'insideOfCont';
-        button.onclick = "handleClick()";
+        var buttonid = data[i]._id
+        button.onclick = function(e){
+            console.log('click inside button');
+            _this.booking(e.target.id);  // to acces react state we use _this
+        };
 
-       let handleClick= function() {
-            console.log('Helooooo');
-            }
 
         // -> put textbox and image inside box
-      //  box.appendChild(textbox);
+        //  box.appendChild(textbox);
         box.appendChild(imageBox);
         imageBox.appendChild(image);
         box.appendChild(boxUnderCarImage);
@@ -112,21 +126,30 @@ class Vehicles extends Component {
 
         document.getElementById("vehicles").appendChild(listitem);
     } //end for loop
+
+
     }) //end data function
     } // end apiRequest
 
-update(data){
-this.setState({
-vehicles : [data]
-});
-console.log('vehicles:');
-console.log(this.state.vehicles);
-}
+    update(data){
+    this.setState({
+    vehicles : [data]
+    });
+    console.log('vehicles:');
+    console.log(this.state.vehicles);
+    }
 
   render() {
-    return (
-        <VehicleList apiRequest={this.apiRequest} apiPost={this.apiPost} />
-    );
+        if (this.state.bookingid === ''){  // to filter if list or booking window is shown.
+        return (
+        <VehicleList apiRequest={this.apiRequest} apiPost={this.apiPost} bookingid = {this.state.bookingid}/>
+        );
+        }
+        else if (this.state.booking !== ''){
+        return (
+        <Booking bookingid = {this.state.bookingid}/>
+        );
+        }
   }
 
 }
