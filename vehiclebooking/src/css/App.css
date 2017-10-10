@@ -19,6 +19,21 @@ img {
     border: ;    
 }
 
+footer {
+    padding: 1em;
+    color: white;
+
+    background-color: black;
+
+    clear: left;
+    text-align: center;
+}
+
+header {    
+    padding: 1em;
+    background-color: black;
+}
+
 /* ===============
    FLEXBOX vehicles list component  
    =============== */
@@ -63,28 +78,10 @@ img {
     flex:1 1 auto;
 }
 
-.App {
-}
-
 /*div.container {
     width: 100%;
 }*/
 
-
-footer {
-    padding: 1em;
-    color: white;
-
-    background-color: black;
-
-    clear: left;
-    text-align: center;
-}
-
-header {    
-    padding: 1em;
-    background-color: black;
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -114,9 +111,6 @@ header {
 /* ===============
   Calendar box  
 =============== */
-
-
-
 
 #vehicles ul {
     list-style-type: none;

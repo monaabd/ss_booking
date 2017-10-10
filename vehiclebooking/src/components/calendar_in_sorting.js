@@ -43,8 +43,6 @@ handleChangeEnd(date) {
      I don't know why it's not working. I tried doing it with another class, the 
     'vehileBox' (that we declaired in the vehicle.js file) and it worked */
    /* var selectedDate = document.getElementsByClassName("react-datepicker__day--range-start");
-
-
     for (let key in selectedDate){
     console.log(selectedDate[0].value); //second console output
     }  */
