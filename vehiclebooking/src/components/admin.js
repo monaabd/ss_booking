@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import UpdateCar from '../components/updateCar';
 
-
-class Admin extends Component {
-  constructor(props){
-    super(props);
-    this.state= {
-      cars: [],
-      chosenCar: null
-    };
+  class Admin extends Component {
+     constructor(props){
+      super(props);
+       this.state= {
+          cars: [],
+          chosenCar: null
+        };
   this.printCars = this.printCars.bind(this);
   this.chooseCar = this.chooseCar.bind(this);
+  this.updateCar = this.updateCar.bind(this);
   }
   componentDidMount() {
     fetch('/vehicles')
@@ -25,6 +25,21 @@ class Admin extends Component {
       console.log(clickedCar);
       this.setState({
         chosenCar: clickedCar
+      });
+    }
+    updateCar(event){
+      let newCar = this.state.chosenCar;
+      if (event.target.id === "i1") newCar.fordonstyp = event.target.value;
+      else if (event.target.id === "i2") newCar.requiredDrivingLicense = event.target.value;
+      else if (event.target.id === "i3") newCar.brand = event.target.value;
+      else if (event.target.id === "i4") newCar.gearbox = event.target.value;
+      else if (event.target.id === "i5") newCar.model = event.target.value;
+      else if (event.target.id === "i6") newCar.year = event.target.value;
+      else if (event.target.id === "i7") newCar.dagshyra = event.target.value;
+      else if (event.target.id === "i8") newCar.imgLink = event.target.value;
+      else if (event.target.id === "i9") newCar.fuel = event.target.value;
+      this.setState({
+        chosenCar: newCar
       });
     }
     printCars(){
@@ -54,11 +69,12 @@ class Admin extends Component {
             {this.printCars()}
           </tbody>
         </table>
-        <UpdateCar
+      <UpdateCar
           chosen={this.state.chosenCar}
-        />
+          upCar={this.updateCar}
+          />
       </div>
-    );
+   );
   }
 }
 

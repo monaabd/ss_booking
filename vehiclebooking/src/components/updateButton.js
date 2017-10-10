@@ -4,12 +4,18 @@ import '../css/App.css';
 
 class UpdateButton extends Component {
   constructor(props){
-    super(props);
-    this.state = {
-    }
+   super(props);
+   this.apiUpdate = this.apiUpdate.bind(this);
+  }
+  apiUpdate(){
+    let car = this.props.newCar;
+    console.log(car);
+  }
   render() {
     return (
-      <button>Press me</button>
+      <div>
+        <button onClick={this.apiUpdate}>UPDATE</button>
+      </div>
     );
   }
 }
