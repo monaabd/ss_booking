@@ -92,9 +92,18 @@ header {
     padding: 10px;
     color: white;
     background-color: gray;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 13pt;
 }
+
+ #booking button {
+    padding: 10px;
+    background-color: black;
+    color:  white;
+    border-radius: 7px;
+    font-size: 13pt;
+    margin: 20px;
+ }
 
 /* ===============
    LIST  
@@ -102,7 +111,6 @@ header {
 
 #datesorting{
     background-image: url('../media/car1.jpg');
-    background-color: gray;
     border: 2px solid grey;
     padding: 20px;
     width: 76%;
@@ -111,6 +119,18 @@ header {
     text-align: center;
     border-radius: 2px;
     margin-top: 20px;
+}
+
+#booking {
+    background-color: #778b8a;
+    border: 2px solid grey;
+    padding: 20px;
+    width: 76%;
+    text-align: center;
+    margin:auto;
+    border-radius: 2px;
+    margin-top: 20px;
+
 }
 
 #calendarBox {
