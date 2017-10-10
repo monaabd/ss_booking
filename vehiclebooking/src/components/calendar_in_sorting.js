@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -8,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 class Calendar_in_sorting extends Component {
 constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       startDate: moment(),
       endDate: moment()
