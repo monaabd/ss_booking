@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-
 import 'react-datepicker/dist/react-datepicker.css';
-
 
 
 
@@ -43,8 +41,6 @@ handleChangeEnd(date) {
      I don't know why it's not working. I tried doing it with another class, the 
     'vehileBox' (that we declaired in the vehicle.js file) and it worked */
    /* var selectedDate = document.getElementsByClassName("react-datepicker__day--range-start");
-
-
     for (let key in selectedDate){
     console.log(selectedDate[0].value); //second console output
     }  */
@@ -68,6 +64,7 @@ handleChangeEnd(date) {
         dateFormat="YYYY/MM/DD"
         showWeekNumbers
         monthsShown={1}
+        minDate={this.state.startDate}
         selected={this.state.startDate}
         selectsStart
         startDate={this.state.startDate}
@@ -80,6 +77,7 @@ handleChangeEnd(date) {
         openToDate={moment("2017-10-08")}
         showWeekNumbers
         monthsShown={1} 
+        minDate={this.state.startDate}
         selected={this.state.endDate}
         selectsEnd
         startDate={this.state.startDate}
