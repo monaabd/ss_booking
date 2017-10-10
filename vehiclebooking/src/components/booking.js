@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import Calendar_in_booking from './calendar_in_booking';
+
 
 
 class Booking extends Component {
@@ -30,25 +32,16 @@ class Booking extends Component {
     render() {
     	return(
     		<div>
+
                 <p>To:{this.props.to}</p>
                 <p>From:{this.props.from}</p>
 
                 <div>{this.checkDate()}</div>
-    			<h1>Booking pop-up</h1>
-                <div>{this.props.bookingid}</div> 
-    			<DatePicker
-                todayButton={"Today"}
-                dateFormat="YYYY/MM/DD"
-                openToDate={this.state.startDate}
-                showWeekNumbers
-                monthsShown={1}
-                minDate={this.state.startDate}
-                selected={this.state.startDate}
-                selectsStart
-                startDate={this.state.startDate}
-                endDate={this.state.endDate}
-                onChange={this.handleChangeStart}
-              />
+                <h1>Booking pop-up</h1>
+                <div>{this.props.bookingid}</div>
+
+
+                <Calendar_in_booking changeFrom={this.changeFrom} changeTo= {this.changeTo} />
     		</div>	
     		);
     }

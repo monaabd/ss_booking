@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -8,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 class Calendar_in_sorting extends Component {
 constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       startDate: moment(),
       endDate: moment()
@@ -61,31 +60,31 @@ handleChangeEnd(date) {
   render() {
     return (
      <div> 
-      <DatePicker
-        todayButton={"Today"}
-        dateFormat="YYYY/MM/DD"
-        showWeekNumbers
-        monthsShown={1}
-        minDate={this.state.startDate}
-        selected={this.state.startDate}
-        selectsStart
-        startDate={this.state.startDate}
-        endDate={this.state.endDate}
-        onChange={this.handleChangeStart}
-      />
-      <DatePicker 
-        todayButton={"Today"}
-        dateFormat="YYYY/MM/DD"
-        openToDate={moment("2017-10-08")}
-        showWeekNumbers
-        monthsShown={1} 
-        minDate={this.state.startDate}
-        selected={this.state.endDate}
-        selectsEnd
-        startDate={this.state.startDate}
-        endDate={this.state.endDate}
-        onChange={this.handleChangeEnd}
-      />
+        <DatePicker
+          todayButton={"Today"}
+          dateFormat="YYYY/MM/DD"
+          showWeekNumbers
+          monthsShown={1}
+          minDate={this.state.startDate}
+          selected={this.state.startDate}
+          selectsStart
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
+          onChange={this.handleChangeStart}
+        />
+        <DatePicker 
+          todayButton={"Today"}
+          dateFormat="YYYY/MM/DD"
+          openToDate={moment("2017-10-08")}
+          showWeekNumbers
+          monthsShown={1} 
+          minDate={this.state.startDate}
+          selected={this.state.endDate}
+          selectsEnd
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
+          onChange={this.handleChangeEnd}
+        />
        </div> 
     );
   }
