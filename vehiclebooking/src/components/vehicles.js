@@ -72,7 +72,12 @@ class Vehicles extends Component {
         image.style.borderRadius = '3px';
 
         // set image src to vehicle data
-        image.src = data[i].imgLink;
+            if(data[i].imgLink === undefined){
+                image.src = 'http://www.imprintables.com/content/images/thumbs/default-image_450.png';
+            }
+            else{
+                image.src = data[i].imgLink;
+            }
         image.style.width = 200 + 'px';
         image.style.height = 'auto';
 
