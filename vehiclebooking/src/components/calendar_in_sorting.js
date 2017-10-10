@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
