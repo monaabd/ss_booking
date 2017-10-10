@@ -24,8 +24,6 @@ class Vehicles extends Component {
   }
 
     booking(x){
-        console.log('we are now outside api call');
-        console.log(x); // id of button. and also id of vehicle.
             this.setState({
             bookingid: x
             });
@@ -38,14 +36,11 @@ class Vehicles extends Component {
     .then(function(response) {
         return response.json();
     }).then(function(data) {
-       // console.log(data[0].brand);
-        console.log(data);
-
     // I made the data load when we open the page and this line makes it load non-stop    
     //    _this.update(data);
 
     for (var i = 0; i < data.length; i++) {
-        console.log(data[i].brand);
+
         // first make an li element for every car.
         var listitem = document.createElement("LI");
         listitem.id = data[i]._id;
@@ -113,7 +108,6 @@ class Vehicles extends Component {
         button.className = 'insideOfCont';
         var buttonid = data[i]._id
         button.onclick = function(e){
-            console.log('click inside button');
             _this.booking(e.target.id);  // to acces react state we use _this
         };
 
@@ -157,10 +151,6 @@ class Vehicles extends Component {
       .then(function(response) {
            return response.json(); 
       }).then(function(data) {
-                console.log(JSON.stringify( data ));
-                console.log(data);
-
-
       })                
 
     }
@@ -169,8 +159,6 @@ class Vehicles extends Component {
     this.setState({
     vehicles : [data]
     });
-    console.log('vehicles:');
-    console.log(this.state.vehicles);
     }
 
   changeFrom(date) {
@@ -183,7 +171,6 @@ class Vehicles extends Component {
     this.setState({
       to: date
     });
-    console.log('vehicles');
   }
 
   render() {
@@ -195,10 +182,6 @@ class Vehicles extends Component {
         else if (this.state.booking !== ''){
         return (
         <div>
-        From:
-        {this.state.from}.
-        To:
-        {this.state.to}.
         <Booking bookingid={this.state.bookingid} from={this.state.from} to={this.state.to}/>
         </div>
         );
