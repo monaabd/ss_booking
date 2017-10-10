@@ -1,3 +1,6 @@
+/* ===============
+   GLOBAL  
+   =============== */
 .App {
   text-align: center;
 }
@@ -9,17 +12,14 @@ div.container {
 footer {
     padding: 1em;
     color: white;
-    background-color: darkslategray;
+    background-color: black;
     clear: left;
     text-align: center;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+header {    
+    padding: 1em;
+    background-color: black;
 }
 
 @keyframes App-logo-spin {
@@ -32,24 +32,51 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: darkslategray;
+    background-color: black;
+}
+
+#vehicles ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: ;
 }
 
 li {
     float: right;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+#vehicles li {
+    float: none;
+    color:white;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
+li button{
+    display: block;
+    color: black;
+    margin-right:1px;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    border:none;
+}
+
+li button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* ===============
+   LOGO 
+   =============== */
+
+#logoText {
+    font-size: 18pt;
+}
+.adminList{
+  margin: 10px;
+  border: 1px solid black;
 }
 j
 #logoText {
@@ -64,5 +91,5 @@ j
     max-width: 100%;
     height: 80vh;
     width: auto\9; /* ie8 */}
-
+}
 

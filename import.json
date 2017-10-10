@@ -1,3 +1,4 @@
+
 [
        {
            "fordonstyp": "personbil",
@@ -166,4 +167,5 @@
            "dagshyra": 298,
            "fuel": "diesel"
        },
+
 ]
