@@ -18,15 +18,14 @@ class VehicleList extends Component {
     this.setState({
       from: date
     });
-    this.props.changeFrom(date);
-  }
+    this.props.changeFrom(date); // send date to parent Vehicles
+  } 
 
   changeTo(date) {
     this.setState({
       to: date
     });
-    console.log('vehiclelist');
-    this.props.changeTo(date);
+    this.props.changeTo(date); // send date to parent Vehicles
   }
 
     render() {

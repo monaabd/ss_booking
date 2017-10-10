@@ -14,25 +14,28 @@ class DateSorting extends Component {
     }
 
   changeFrom(date) {
+
+    this.props.changeFrom(date); // send date to parent VehicleList
+    
     this.setState({
       from: date
     });
-    this.props.changeFrom(date);
+ 
   }
 
   changeTo(date) {
+
+    this.props.changeTo(date); // send date to parent VehicleList
+
     this.setState({
       to: date
     });
-    this.props.changeTo(date);
-    console.log('DateSorting');
+  
   }
 
     render() {
     	return(
             <div id="datesorting">
-            <p>From: {this.state.from}</p>
-            <p>To: {this.state.to}</p>
             <Calendar_in_sorting changeFrom={this.changeFrom} changeTo= {this.changeTo} />  
             </div>
     		);

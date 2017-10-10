@@ -21,20 +21,24 @@ constructor (props) {
     this.setState({
       startDate: date,
     });
-    let thedate = JSON.stringify(date);;
+    let thedate = JSON.stringify(date);
+
+    this.props.changeTo(thedate); // send date to parent DateSorting
+
     thedate = thedate.slice(0, 11);
-    console.log(thedate);
-    this.props.changeFrom(thedate);
+
   }
  
 handleChangeEnd(date) {
     this.setState({
       endDate: date,
     });
-    let thedate = JSON.stringify(date);;
+    let thedate = JSON.stringify(date);
+
+    this.props.changeTo(thedate); // send date to parent DateSorting
+
     thedate = thedate.slice(0, 11);
-    console.log(thedate);
-    this.props.changeTo(thedate);
+
 
     /* I am trying to pick out all the dates that are selected so that we can 
     show that in the availability.

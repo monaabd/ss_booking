@@ -146,13 +146,16 @@ class Vehicles extends Component {
     this.setState({
       from: date
     });
+    console.log('This is the grandmother: vehicles(FROM)');
+    console.log(this.state.from);
   }
 
   changeTo(date) {
     this.setState({
       to: date
     });
-    console.log('vehicles');
+    console.log('This is the grandmother: vehicles(TO)');
+    console.log(this.state.to);
   }
 
   render() {
@@ -164,10 +167,6 @@ class Vehicles extends Component {
         else if (this.state.booking !== ''){
         return (
         <div>
-        From:
-        {this.state.from}.
-        To:
-        {this.state.to}.
         <Booking bookingid={this.state.bookingid} from={this.state.from} to={this.state.to}/>
         </div>
         );
