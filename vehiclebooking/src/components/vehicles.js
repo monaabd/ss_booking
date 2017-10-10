@@ -15,6 +15,9 @@ class Vehicles extends Component {
     this.apiRequest = this.apiRequest.bind(this);
     this.update = this.update.bind(this);
     this.booking = this.booking.bind(this);
+
+    this.changeFrom = this.changeFrom.bind(this);
+    this.changeTo = this.changeTo.bind(this);
   }
 
     booking(x){
@@ -139,15 +142,34 @@ class Vehicles extends Component {
     console.log(this.state.vehicles);
     }
 
+  changeFrom(date) {
+    this.setState({
+      from: date
+    });
+  }
+
+  changeTo(date) {
+    this.setState({
+      to: date
+    });
+    console.log('vehicles');
+  }
+
   render() {
         if (this.state.bookingid === ''){  // to filter if list or booking window is shown.
         return (
-        <VehicleList apiRequest={this.apiRequest} apiPost={this.apiPost} bookingid = {this.state.bookingid}/>
+        <VehicleList changeFrom={this.changeFrom} changeTo={this.changeTo} apiRequest={this.apiRequest} apiPost={this.apiPost} bookingid = {this.state.bookingid}/>
         );
         }
         else if (this.state.booking !== ''){
         return (
-        <Booking bookingid = {this.state.bookingid}/>
+        <div>
+        From:
+        {this.state.from}.
+        To:
+        {this.state.to}.
+        <Booking bookingid={this.state.bookingid} from={this.state.from} to={this.state.to}/>
+        </div>
         );
         }
   }

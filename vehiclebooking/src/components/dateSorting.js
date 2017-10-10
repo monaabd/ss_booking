@@ -17,12 +17,15 @@ class DateSorting extends Component {
     this.setState({
       from: date
     });
+    this.props.changeFrom(date);
   }
 
   changeTo(date) {
     this.setState({
       to: date
     });
+    this.props.changeTo(date);
+    console.log('DateSorting');
   }
 
     render() {
