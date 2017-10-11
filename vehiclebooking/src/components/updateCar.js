@@ -10,7 +10,6 @@ class UpdateCar extends Component {
     super(props);
   }
   render() {
-
     if (this.props.chosen === null || this.props.chosen === "" || this.props.chosen === undefined)
       return (
         <p>No car chosen</p>
