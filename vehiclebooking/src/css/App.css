@@ -1,5 +1,5 @@
 /* ===============
-   GLOBAL  
+   GLOBAL
    =============== */
 .App {
   text-align: center;
@@ -17,7 +17,7 @@ footer {
     text-align: center;
 }
 
-header {    
+header {
     padding: 1em;
     background-color: black;
 }
@@ -28,7 +28,7 @@ header {
 }
 
 /* ===============
-   LIST  
+   LIST
    =============== */
 
 ul {
@@ -72,16 +72,13 @@ li button:hover {
 }
 
 /* ===============
-   LOGO 
+   LOGO
    =============== */
 
 #logoText {
     font-size: 18pt;
 }
-.adminList{
-  margin: 10px;
-  border: 1px solid black;
-}
+
 
 #bgcar{
     background-image:url('../media/car.jpg');
@@ -92,6 +89,17 @@ li button:hover {
     width: auto\9; /* ie8 */}
 
 /* ===============
-   ??
+   ADMIN
    =============== */
 
+.adminList{
+ margin: 10px;
+ border: 1px solid black;
+}
+.adminContainer{
+  display: flex;
+}
+.adminTable{
+}
+.adminForm{
+}

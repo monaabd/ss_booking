@@ -21,8 +21,9 @@ import UpdateCar from '../components/updateCar';
       });
     }
     chooseCar(event){
+      console.log(event.target)
       let clickedCar = this.state.cars.find(car => {
-        return car._id === event.target.parentNode.id;
+        return car._id === event.target.id;
       });
       console.log(clickedCar);
       this.setState({
@@ -46,11 +47,12 @@ import UpdateCar from '../components/updateCar';
     }
     printCars(){
       return this.state.cars.map(car =>
-       <tr onClick={this.chooseCar} className="adminList" key={car._id} id={car._id}>
+       <tr className="adminList" key={car._id}>
         <td>Id: <b>{car._id}</b></td>
         <td>Brand: <b>{car.brand}</b></td>
         <td>Model: <b>{car.model}</b></td>
         <td>Year: <b>{car.year}</b></td>
+        <td><button id={car._id} onClick={this.chooseCar}>Edit</button></td>
        </tr>
      )
     }
@@ -64,17 +66,19 @@ import UpdateCar from '../components/updateCar';
     );
     }
     else return (
-      <div>
+      <div className="adminContainer">
         <h1>Vehicles view</h1>
-        <table>
+        <table className="adminTable">
           <tbody>
             {this.printCars()}
           </tbody>
         </table>
-      <UpdateCar
-          chosen={this.state.chosenCar}
-          upCar={this.updateCar}
-          />
+        <table className="adminForm">
+          <UpdateCar
+              chosen={this.state.chosenCar}
+              upCar={this.updateCar}
+              />
+        </table>
       </div>
    );
   }

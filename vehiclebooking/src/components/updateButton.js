@@ -8,8 +8,16 @@ class UpdateButton extends Component {
    this.apiUpdate = this.apiUpdate.bind(this);
   }
   apiUpdate(){
-    let car = this.props.newCar;
-    console.log(car);
+    let car = JSON.stringify(this.props.newCar);
+    fetch('/vehicles/'+car._id, {
+      method: "PUT",
+      body: car,
+      headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     }
+    }).then(function(response){
+    });
   }
   render() {
     return (
