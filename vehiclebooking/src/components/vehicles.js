@@ -38,6 +38,7 @@ class Vehicles extends Component {
     }).then(function(data) {
     // I made the data load when we open the page and this line makes it load non-stop    
     //    _this.update(data);
+    console.log(data[1].brand);
 
     for (var i = 0; i < data.length; i++) {
 
@@ -106,7 +107,7 @@ class Vehicles extends Component {
         button.innerHTML = 'Book now';
         button.id = data[i]._id;
         button.className = 'insideOfCont';
-        var buttonid = data[i]._id
+        var buttonid = data[i]._id;
         button.onclick = function(e){
             _this.booking(e.target.id);  // to acces react state we use _this
         };
