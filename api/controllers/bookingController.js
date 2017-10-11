@@ -3,6 +3,14 @@
 var mongoose = require('mongoose'),
   Vehicle = mongoose.model('Vehicle');
 
+function validateCar(body){
+  let car = body;
+  delete car._id;
+  car.year = Number(car.year);
+  car.dagshyra = Number(car.dagshyra);
+  return car;
+}
+
 exports.list_all_vehicles = function(req, res) {
   Vehicle.find({}, function(err, vehicle) {
     if (err)
@@ -13,10 +21,8 @@ exports.list_all_vehicles = function(req, res) {
 
 
 exports.create_a_vehicle = function(req, res) {
-  console.log("req.body", req.body, typeof req.body)
-  let validCar = req.body;
-  validCar.rent = Number(validCar.rent);
-  var new_vehicle = new Vehicle(req.body);
+  let validCar = validateCar(req.body);
+  var new_vehicle = new Vehicle(validCar);
   new_vehicle.save(function(err, vehicle) {
     if (err)
       console.log(err);
