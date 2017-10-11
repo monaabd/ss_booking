@@ -84,7 +84,7 @@ class Vehicles extends Component {
 
         // box including all car specifications
         var boxUnderCarImage = document.createElement('DIV');
-        boxUnderCarImage.id = 'boxUnderCarImage';
+        boxUnderCarImage.className = 'boxUnderCarImage';
 
 
         // then make a div with car name and model
@@ -149,15 +149,42 @@ class Vehicles extends Component {
     }
 
   changeFrom(date) {
-    this.setState({
-      from: date
-    });
-  }
+    let slicedDate = date.slice(0, 11);
+    console.log(slicedDate.length);
+
+    if(slicedDate.length < 5 ) {
+        this.setState({
+                from: slicedDate
+        });
+        console.log('vehicles from' + slicedDate);
+    }else {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+
+        today = mm + '/' + dd + '/' + yyyy;
+        console.log(today);
+        this.setState({
+            from: today
+        });
+    }// end of if
+
+  }// end of changeFrom
 
   changeTo(date) {
     this.setState({
       to: date
     });
+    console.log('vehicles to' + date);
   }
 
 

@@ -19,6 +19,7 @@ class VehicleList extends Component {
       from: date
     });
     this.props.changeFrom(date); // send date to parent Vehicles
+    console.log('in vehicle List ' + date);
   } 
 
   changeTo(date) {
