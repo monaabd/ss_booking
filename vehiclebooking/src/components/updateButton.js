@@ -8,6 +8,7 @@ class UpdateButton extends Component {
    this.apiUpdate = this.apiUpdate.bind(this);
   }
   apiUpdate(){
+    var updateComponent = this;
     let car = JSON.stringify(this.props.newCar);
     fetch('/vehicles/'+car._id, {
       method: "PUT",
@@ -17,6 +18,7 @@ class UpdateButton extends Component {
        'Content-Type': 'application/json'
      }
     }).then(function(response){
+       updateComponent.props.printMsg("Changes saved to database");
     });
   }
   render() {

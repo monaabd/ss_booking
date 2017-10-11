@@ -11,6 +11,7 @@ class DeleteButton extends Component {
 }
 clickDelete(){
     console.log(this.props.carId);
+    this.props.printMsg(""+this.props.carId);
 }
   render() {
     return (

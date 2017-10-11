@@ -102,3 +102,14 @@ li button:hover {
 .adminForm td:first-child{
   text-align: right;
 }
+
+.adminHide{
+  display: none;
+}
+.adminShow{
+  display: block;
+}
+#adminMsg{
+  color: red;
+  font-size: 24px;
+}

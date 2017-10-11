@@ -6,8 +6,8 @@ var mongoose = require('mongoose'),
 function validateCar(body, add){
   let car = body;
   if (add) delete car._id;
-  car.year = Number(car.year);
-  car.dagshyra = Number(car.dagshyra);
+  car.year = parseInt(car.year) || 0;
+  car.dagshyra = parseInt(car.dagshyra) || 0;;
   return car;
 }
 
@@ -45,9 +45,8 @@ exports.update_a_vehicle = function(req, res) {
   let validCar = validateCar(req.body, false);
   Vehicle.findOneAndUpdate({_id: validCar._id}, validCar, {new: true}, function(err, vehicle) {
     if (err)
-      console.log(err);
-    else
-    console.log("Vehicle updated", vehicle);
+      res.send("Error updating vehichle:", err);
+    res.json("Changes saved to database");
   });
 };
 
