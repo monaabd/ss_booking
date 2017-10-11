@@ -2,38 +2,57 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import UpdateCar from '../components/updateCar';
 
-
-class Admin extends Component {
-  constructor(props){
-    super(props);
-    this.state= {
-      cars: [],
-      chosenCar: null
-    };
+  class Admin extends Component {
+     constructor(props){
+      super(props);
+       this.state= {
+          cars: [],
+          chosenCar: null
+        };
   this.printCars = this.printCars.bind(this);
   this.chooseCar = this.chooseCar.bind(this);
+  this.updateCar = this.updateCar.bind(this);
   }
   componentDidMount() {
     fetch('/vehicles')
       .then(res => res.json())
-      .then(cars => this.setState({ cars }));
+      .then(cars => {
+        this.setState({ cars });
+      });
     }
     chooseCar(event){
+      console.log(event.target)
       let clickedCar = this.state.cars.find(car => {
-        return car._id === event.target.parentNode.id;
+        return car._id === event.target.id;
       });
       console.log(clickedCar);
       this.setState({
         chosenCar: clickedCar
       });
     }
+    updateCar(event){
+      let newCar = this.state.chosenCar;
+      if (event.target.id === "itype") newCar.fordonstyp = event.target.value;
+      else if (event.target.id === "ilicense") newCar.requiredDrivingLicense = event.target.value;
+      else if (event.target.id === "ibrand") newCar.brand = event.target.value;
+      else if (event.target.id === "igear") newCar.gearbox = event.target.value;
+      else if (event.target.id === "imodel") newCar.model = event.target.value;
+      else if (event.target.id === "iyear") newCar.year = event.target.value;
+      else if (event.target.id === "irent") newCar.dagshyra = event.target.value;
+      else if (event.target.id === "iphoto") newCar.imgLink = event.target.value;
+      else if (event.target.id === "ifuel") newCar.fuel = event.target.value;
+      this.setState({
+        chosenCar: newCar
+      });
+    }
     printCars(){
       return this.state.cars.map(car =>
-       <tr onClick={this.chooseCar} className="adminList" key={car._id} id={car._id}>
+       <tr className="adminList" key={car._id}>
         <td>Id: <b>{car._id}</b></td>
         <td>Brand: <b>{car.brand}</b></td>
         <td>Model: <b>{car.model}</b></td>
         <td>Year: <b>{car.year}</b></td>
+        <td><button id={car._id} onClick={this.chooseCar}>Edit</button></td>
        </tr>
      )
     }
@@ -47,18 +66,21 @@ class Admin extends Component {
     );
     }
     else return (
-      <div>
+      <div className="adminContainer">
         <h1>Vehicles view</h1>
-        <table>
+        <table className="adminTable">
           <tbody>
             {this.printCars()}
           </tbody>
         </table>
-        <UpdateCar
-          chosen={this.state.chosenCar}
-        />
+        <table className="adminForm">
+          <UpdateCar
+              chosen={this.state.chosenCar}
+              upCar={this.updateCar}
+              />
+        </table>
       </div>
-    );
+   );
   }
 }
 

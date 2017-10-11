@@ -14,7 +14,7 @@ clickDelete(){
 }
   render() {
     return (
-      <button onClick={this.clickDelete}>Press me</button>
+      <button onClick={this.clickDelete}>DELETE</button>
     );
   }
 }
