@@ -9,7 +9,6 @@ class AddButton extends Component {
   }
   apiAdd(){
     let car = JSON.stringify(this.props.newCar);
-    delete car._id;
     fetch("/vehicles", {
       method: "POST",
       body: car,
