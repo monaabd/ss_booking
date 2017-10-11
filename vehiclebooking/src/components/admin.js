@@ -32,15 +32,15 @@ import UpdateCar from '../components/updateCar';
     }
     updateCar(event){
       let newCar = this.state.chosenCar;
-      if (event.target.id === "i1") newCar.fordonstyp = event.target.value;
-      else if (event.target.id === "i2") newCar.requiredDrivingLicense = event.target.value;
-      else if (event.target.id === "i3") newCar.brand = event.target.value;
-      else if (event.target.id === "i4") newCar.gearbox = event.target.value;
-      else if (event.target.id === "i5") newCar.model = event.target.value;
-      else if (event.target.id === "i6") newCar.year = event.target.value;
-      else if (event.target.id === "i7") newCar.dagshyra = event.target.value;
-      else if (event.target.id === "i8") newCar.imgLink = event.target.value;
-      else if (event.target.id === "i9") newCar.fuel = event.target.value;
+      if (event.target.id === "itype") newCar.fordonstyp = event.target.value;
+      else if (event.target.id === "ilicense") newCar.requiredDrivingLicense = event.target.value;
+      else if (event.target.id === "ibrand") newCar.brand = event.target.value;
+      else if (event.target.id === "igear") newCar.gearbox = event.target.value;
+      else if (event.target.id === "imodel") newCar.model = event.target.value;
+      else if (event.target.id === "iyear") newCar.year = event.target.value;
+      else if (event.target.id === "irent") newCar.dagshyra = event.target.value;
+      else if (event.target.id === "iphoto") newCar.imgLink = event.target.value;
+      else if (event.target.id === "ifuel") newCar.fuel = event.target.value;
       this.setState({
         chosenCar: newCar
       });

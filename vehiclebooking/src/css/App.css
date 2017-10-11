@@ -99,7 +99,6 @@ li button:hover {
 .adminContainer{
   display: flex;
 }
-.adminTable{
-}
-.adminForm{
+.adminForm td:first-child{
+  text-align: right;
 }
