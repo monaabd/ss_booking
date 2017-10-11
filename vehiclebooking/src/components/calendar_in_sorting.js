@@ -10,7 +10,7 @@ class Calendar_in_sorting extends Component {
 constructor (props) {
     super(props);
     this.state = {
-      startDate: moment(),
+      startDate: moment('2017-10-11'),
       endDate: moment()
     };
     this.handleChangeStart = this.handleChangeStart.bind(this);
@@ -63,9 +63,9 @@ handleChangeEnd(date) {
      <div id="calendarBox"> 
       <p className="chooseDate">Pick-up date:</p>
       <DatePicker
-        todayButton={"Today"}
         dateFormat="YYYY/MM/DD"
         showWeekNumbers
+        openToDate={moment("2017-10-12")}
         monthsShown={1}
         minDate={this.state.startDate}
         selected={this.state.startDate}
@@ -76,10 +76,9 @@ handleChangeEnd(date) {
       />
       <p className="chooseDate">Drop-off date:</p>
       <DatePicker 
-        todayButton={"Today"}
         dateFormat="YYYY/MM/DD"
-        openToDate={moment("2017-10-08")}
         showWeekNumbers
+        openToDate={moment("2017-10-12")}
         monthsShown={1} 
         minDate={this.state.startDate}
         selected={this.state.endDate}

@@ -34,7 +34,7 @@ class VehicleList extends Component {
             <div>
                 <div><DateSorting changeFrom={this.changeFrom} changeTo={this.changeTo}/></div>
                 <ul id="vehicles" className= "vehiclesContainer"></ul>
-                <div>{this.props.apiRequest()} {this.props.apiPost()}</div>
+                <div>{this.props.apiRequest()} </div>
             </div>	
     		);
     }
