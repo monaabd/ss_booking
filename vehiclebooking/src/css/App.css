@@ -78,10 +78,7 @@ li button:hover {
 #logoText {
     font-size: 18pt;
 }
-.adminList{
-  margin: 10px;
-  border: 1px solid black;
-}
+
 
 #bgcar{
     background-image:url('../media/car.jpg');
@@ -90,3 +87,18 @@ li button:hover {
     max-width: 100%;
     height: 80vh;
     width: auto\9; /* ie8 */}
+
+/* ===============
+   ADMIN
+   =============== */
+
+.adminList{
+ margin: 10px;
+ border: 1px solid black;
+}
+.adminContainer{
+  display: flex;
+}
+.adminForm td:first-child{
+  text-align: right;
+}

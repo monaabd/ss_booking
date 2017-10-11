@@ -34,13 +34,12 @@ let vehicleSchema = mongoose.Schema({
     type: Object,
   },
     fuel:{
-    type: Number,
+    type: String,
   },
     dates: {
       availability: Boolean,
       date:[{from: Number, to: Number}]
     }
-    
 });
 
 let Vehicle = module.exports = mongoose.model('Vehicle', vehicleSchema);
