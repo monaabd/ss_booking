@@ -8,8 +8,13 @@ class AddButton extends Component {
    this.apiAdd = this.apiAdd.bind(this);
   }
   apiAdd(){
-    let car = this.props.newCar;
-    console.log(car);
+    //let car = this.props.newCar;
+    fetch('/vehicles', {
+      method: 'post',
+      body: JSON.stringify({
+    car : this.props.newCar
+	})
+});
   }
   render() {
     return (
