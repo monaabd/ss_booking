@@ -1,3 +1,4 @@
+
 [
        {
            "fordonstyp": "personbil",
@@ -237,5 +238,6 @@
               "availability": true,
               "date": [{"from": 0, "to": 0}]
            }
-       }
+       },
+
 ]
