@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../css/Admin.css';
 
 
 class AddButton extends Component {
@@ -8,8 +8,16 @@ class AddButton extends Component {
    this.apiAdd = this.apiAdd.bind(this);
   }
   apiAdd(){
-    let car = this.props.newCar;
-    console.log(car);
+    let car = JSON.stringify(this.props.newCar);
+    fetch("/vehicles", {
+      method: "POST",
+      body: car,
+      headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     }
+    }).then(function(response){
+    });
   }
   render() {
     return (

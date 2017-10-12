@@ -10,7 +10,6 @@ class Start extends Component {
       </div>
     );
   }
-
 }
 
 export default Start;
