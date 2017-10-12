@@ -1,3 +1,5 @@
+/* Styling for all the admin components */
+
 .adminList{
  margin: 10px;
  border: 1px solid black;
@@ -16,13 +18,12 @@
   display: block;
 }
 #adminMsg{
-  color: red;
+  color: yellow;
   font-size: 24px;
   position: absolute;
   width: 300px;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: grey;
-  border: 1px solid black;
+  left: 50%;
+  background-color: black;
+  border: 1px solid grey;
 }

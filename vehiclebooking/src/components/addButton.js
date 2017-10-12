@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import '../css/Admin.css';
 
-
 class AddButton extends Component {
   constructor(props){
    super(props);
    this.apiAdd = this.apiAdd.bind(this);
   }
+  /* When clicking on the add button this function will make a request to the REST API.
+     it takes information from all the input fields that is saved in the Admin components state
+  */
   apiAdd(){
     var addComponent = this;
     let car = JSON.stringify(this.props.newCar);
