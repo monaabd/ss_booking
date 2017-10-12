@@ -6,9 +6,7 @@ import AddButton from '../components/addButton';
 
 
 class UpdateCar extends Component {
-  constructor(props){
-    super(props);
-  }
+
   render() {
       return (
         <tbody key={(this.props.chosen === null) ? 0 : this.props.chosen._id}>

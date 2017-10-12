@@ -114,7 +114,6 @@ class Vehicles extends Component {
         button.innerHTML = 'Book now';
         button.id = data[i]._id;
         button.className = 'insideOfCont';
-        var buttonid = data[i]._id;
         button.onclick = function(e){
             _this.booking(e.target.id);  // to acces react state we use _this
         };
@@ -172,7 +171,7 @@ class Vehicles extends Component {
     console.log('To: ' + slicedDateTo.length);
 
 
-    if(slicedDateTo.length === 11 && this.state.test != true) {
+    if(slicedDateTo.length === 11 && this.state.test !== true) {
         console.log('if running');
         var today = new Date();
         var dd = today.getDate();
