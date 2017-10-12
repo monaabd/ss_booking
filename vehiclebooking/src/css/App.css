@@ -92,13 +92,24 @@ li button:hover {
    ADMIN
    =============== */
 
-.adminList{
- margin: 10px;
- border: 1px solid black;
-}
-.adminContainer{
-  display: flex;
-}
-.adminForm td:first-child{
-  text-align: right;
-}
+   .adminList{
+    margin: 10px;
+    border: 1px solid black;
+   }
+   .adminContainer{
+     display: flex;
+   }
+   .adminForm td:first-child{
+     text-align: right;
+   }
+
+   .adminHide{
+     display: none;
+   }
+   .adminShow{
+     display: block;
+   }
+   #adminMsg{
+     color: red;
+     font-size: 24px;
+   }
