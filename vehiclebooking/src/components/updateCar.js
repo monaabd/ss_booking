@@ -4,7 +4,7 @@ import UpdateButton from '../components/updateButton';
 import DeleteButton from '../components/deleteButton';
 import AddButton from '../components/addButton';
 
-
+// This component renders the edit form (input fields and button components)
 class UpdateCar extends Component {
   constructor(props){
     super(props);
