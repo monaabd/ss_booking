@@ -5,13 +5,17 @@ import '../css/App.css';
 class DeleteButton extends Component {
   constructor(props){
     super(props);
-    this.state = {
-    }
   this.clickDelete = this.clickDelete.bind(this);
 }
-clickDelete(){
-    console.log(this.props.carId);
-    this.props.printMsg(""+this.props.carId);
+ clickDelete() {
+    var DelComponent = this;
+    let item = JSON.stringify(this.props.carId);
+    console.log(item);
+    fetch("/vehicles" + '/' + item, {
+    method: "DELETE"
+    }).then(response =>{
+     DelComponent.props.printMsg("Vehicle with Id: "+item+" successfully deleted")
+   });
 }
   render() {
     return (

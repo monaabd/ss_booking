@@ -52,11 +52,13 @@ exports.update_a_vehicle = function(req, res) {
 
 
 exports.delete_a_vehicle = function(req, res) {
+  console.log("req.params",req.params.vehicleId);
+  let delId = JSON.parse(req.params.vehicleId);
   Vehicle.remove({
-    _id: req.params.vehicleId
+    _id: delId
   }, function(err, vehicle) {
     if (err)
-      res.send(err);
-    res.json({ message: 'Vehicle successfully deleted' });
+      res.send("Error updating vehichle:", err);
+    res.json("Changes saved to database");
   });
 };

@@ -12,6 +12,9 @@ class UpdateCar extends Component {
   render() {
       return (
         <tbody key={(this.props.chosen === null) ? 0 : this.props.chosen._id}>
+        <tr><td>Id:</td>
+          <td><span id="i_id">
+          {(this.props.chosen === null) ? "" : this.props.chosen._id}</span></td></tr>
         <tr><td>Vehicle type:</td>
           <td><input id="itype"
           onChange={this.props.upCar}
@@ -48,6 +51,7 @@ class UpdateCar extends Component {
           <td><input id="ifuel"
           onChange={this.props.upCar}
           defaultValue={(this.props.chosen === null) ? "" : this.props.chosen.fuel} /></td></tr>
+          <tr><td><input type="checkbox"/>Availability</td></tr>
         <tr>
           <td><UpdateButton
             newCar={this.props.chosen}

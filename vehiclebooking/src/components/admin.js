@@ -33,7 +33,7 @@ import UpdateCar from '../components/updateCar';
 
       setTimeout(function() {
         this.setState({msgClass: "adminHide"});
-      }.bind(this), 3000);
+      }.bind(this), 4000);
     }
     chooseCar(event){
       console.log(event.target)
@@ -47,7 +47,8 @@ import UpdateCar from '../components/updateCar';
     }
     updateCar(event){
       let newCar = this.state.chosenCar;
-      if (event.target.id === "itype") newCar.fordonstyp = event.target.value;
+      if (event.target.id === "i_id") newCar.car._id = event.target.value;
+      else if (event.target.id === "itype") newCar.fordonstyp = event.target.value;
       else if (event.target.id === "ilicense") newCar.requiredDrivingLicense = event.target.value;
       else if (event.target.id === "ibrand") newCar.brand = event.target.value;
       else if (event.target.id === "igear") newCar.gearbox = event.target.value;
