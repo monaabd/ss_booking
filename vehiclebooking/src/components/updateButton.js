@@ -18,7 +18,9 @@ class UpdateButton extends Component {
        'Content-Type': 'application/json'
      }
     }).then(function(response){
-       updateComponent.props.printMsg("Changes saved to database");
+      updateComponent.props.printMsg("Vehicle changes successfully been saved to Database!");
+    }).catch(function(error) {
+      updateComponent.props.printMsg('Error updating vehicle:' + error.message);
     });
   }
   render() {

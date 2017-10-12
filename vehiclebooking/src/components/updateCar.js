@@ -63,6 +63,7 @@ class UpdateCar extends Component {
            /></td>
           <td><AddButton
             newCar={this.props.chosen}
+            printMsg={this.props.printMsg}
           /></td>
         </tr>
         </tbody>

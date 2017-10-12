@@ -8,6 +8,7 @@ class AddButton extends Component {
    this.apiAdd = this.apiAdd.bind(this);
   }
   apiAdd(){
+    var addComponent = this;
     let car = JSON.stringify(this.props.newCar);
     fetch("/vehicles", {
       method: "POST",
@@ -17,6 +18,9 @@ class AddButton extends Component {
        'Content-Type': 'application/json'
      }
     }).then(function(response){
+      addComponent.props.printMsg("New vehicle has successfully been added to Database!");
+    }).catch(function(error) {
+      addComponent.props.printMsg('Error adding vehicle:' + error.message);
     });
   }
   render() {

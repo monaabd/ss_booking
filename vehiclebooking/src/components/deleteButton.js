@@ -15,6 +15,8 @@ class DeleteButton extends Component {
     method: "DELETE"
     }).then(response =>{
      DelComponent.props.printMsg("Vehicle with Id: "+item+" successfully deleted")
+    }).catch(function(error) {
+     DelComponent.props.printMsg('Error deleting vehicle:' + error.message);
    });
 }
   render() {
