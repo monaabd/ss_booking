@@ -16,7 +16,7 @@ constructor (props) {
     this.handleChangeStart = this.handleChangeStart.bind(this);
     this.handleChangeEnd = this.handleChangeEnd.bind(this);
   }
- 
+
   handleChangeStart(date) {
     this.setState({
       startDate: date,
@@ -28,7 +28,7 @@ constructor (props) {
     thedate = thedate.slice(0, 11);
 
   }
- 
+
 handleChangeEnd(date) {
     this.setState({
       endDate: date,
@@ -40,9 +40,9 @@ handleChangeEnd(date) {
     thedate = thedate.slice(0, 11);
 
 
-    /* I am trying to pick out all the dates that are selected so that we can 
+    /* I am trying to pick out all the dates that are selected so that we can
     show that in the availability.
-     I don't know why it's not working. I tried doing it with another class, the 
+     I don't know why it's not working. I tried doing it with another class, the
     'vehileBox' (that we declaired in the vehicle.js file) and it worked */
    /* var selectedDate = document.getElementsByClassName("react-datepicker__day--range-start");
     for (let key in selectedDate){
@@ -55,12 +55,12 @@ handleChangeEnd(date) {
     var secondDate = new Date(2008,2,22);
 
     var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-  
+
   }
 
   render() {
     return (
-     <div id="calendarBox"> 
+     <div id="calendarBox">
       <p className="chooseDate">Pick-up date:</p>
       <DatePicker
         dateFormat="YYYY/MM/DD"
@@ -75,11 +75,11 @@ handleChangeEnd(date) {
         onChange={this.handleChangeStart}
       />
       <p className="chooseDate">Drop-off date:</p>
-      <DatePicker 
+      <DatePicker
         dateFormat="YYYY/MM/DD"
         showWeekNumbers
         openToDate={moment("2017-10-12")}
-        monthsShown={1} 
+        monthsShown={1}
         minDate={this.state.startDate}
         selected={this.state.endDate}
         selectsEnd
@@ -87,7 +87,7 @@ handleChangeEnd(date) {
         endDate={this.state.endDate}
         onChange={this.handleChangeEnd}
       />
-       </div> 
+       </div>
     );
   }
 }

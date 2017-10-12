@@ -17,71 +17,66 @@ class Booking extends Component {
         };
         this.showVehicleInfo = this.showVehicleInfo.bind(this);
         this.bookedCar = this.showVehicleInfo.bind(this);
+				this.apiBook = this.apiBook.bind(this);
     }
-
     showVehicleInfo(){
-
-
-
-        nogood = this.props.bookingid;
+  			nogood = this.props.bookingid;
         const _this = this;
-     
+
        fetch('/vehicles')
-    .then(function(response) {
-        return response.json();
-    }).then(function(data) {
+		   .then(function(response) {
+		       return response.json();
+		   }).then(function(data) {
 
         for (var i = 0; i < data.length; i++) {
             if(nogood === data[i]._id){
 
-        // first make an li element for every car.
-        var listitem = document.createElement("LI");
-        listitem.id = data[i]._id;
-        listitem.innerHTML = data[i].brand;
+		        // first make an li element for every car.
+		        var listitem = document.createElement("LI");
+		        listitem.id = data[i]._id;
+		        listitem.innerHTML = data[i].brand;
 
+		        document.getElementById("car").appendChild(listitem);
+		        }
+    		}// end for loop
+    	}) // end get*/
+		} // end showvehicleinfo
 
-        document.getElementById("car").appendChild(listitem);
-            }
-
-      
-    }// end for loop    
-
-    }) // end get*/
-} // end showvehicleinfo
-
-/*
-     apiAdd(){
-    let car = JSON.stringify(this.props.newCar);
-    fetch("/vehicles", {
-      method: "POST",
-      body: car,
-      headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
-     }
-    }).then(function(response){
-    });
-*/
-
-
-
+    apiBook(){
+			let id = this.props.bookingid;
+			let dates = {
+				start: this.state.startDate,
+				end: this.state.endDate
+			}
+			console.log("Id:", id);
+			console.log("Dates:", dates);
+	    fetch("/vehicles/"+id, {
+	      method: "PUT",
+				body: JSON.stringify(dates),
+	      headers: {
+	       'Accept': 'application/json',
+	       'Content-Type': 'application/json'
+	     }
+	    }).then(function(response){
+	    });
+		}
     render() {
 
     	return(
     		<div id="booking">
-         
+
                 <div>{this.showVehicleInfo()}</div>
                 <ul id="car" />
     			<h1>Your booking information</h1>
-                <div>{this.props.bookingid}</div> 
+                <div>{this.props.bookingid}</div>
                 <p>From:{this.props.from}</p>
                 <p>To:{this.props.to}</p>
                 <Calendar_in_booking />
-                <button>Confirm</button>
-    		</div>	
+                <button onClick={this.apiBook}>Confirm</button>
+    		</div>
     		);
     }
-  
+
   }
 
   export default Booking;
