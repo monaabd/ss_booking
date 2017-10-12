@@ -10,7 +10,8 @@ class Vehicles extends Component {
     super(props);
     this.state = {
       vehicles : [],
-      bookingid: ''
+      bookingid: '',
+      test: false
     };
 
     this.apiRequest = this.apiRequest.bind(this);
@@ -21,6 +22,7 @@ class Vehicles extends Component {
 
     this.changeFrom = this.changeFrom.bind(this);
     this.changeTo = this.changeTo.bind(this);
+    this.fireChangeFromAndTo = this.fireChangeFromAndTo.bind(this);
   }
 
     booking(x){
@@ -148,16 +150,30 @@ class Vehicles extends Component {
     });
     }
 
-  changeFrom(date) {
-    let slicedDate = date.slice(0, 11);
-    console.log(slicedDate.length);
+    fireChangeFromAndTo() {
+        if(this.changeTo) {
+            console.log('Change To is running');
+        }
+    }
 
-    if(slicedDate.length < 5 ) {
+  changeFrom(date) {
+    console.log('Fire changeFrom');
+    let slicedDateFrom = date.slice(0, 11);
+    console.log('From: ' + slicedDateFrom.length);
+
         this.setState({
-                from: slicedDate
+                from: slicedDateFrom,
+                test: true
         });
-        console.log('vehicles from' + slicedDate);
-    }else {
+  }// end of changeFrom
+
+  changeTo(date) {
+    let slicedDateTo = date.slice(0, 11);
+    console.log('To: ' + slicedDateTo.length);
+
+
+    if(slicedDateTo.length === 11 && this.state.test != true) {
+        console.log('if running');
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; //January is 0!
@@ -171,21 +187,24 @@ class Vehicles extends Component {
             mm = '0'+mm
         } 
 
-        today = mm + '/' + dd + '/' + yyyy;
-        console.log(today);
+        today = dd + '/' + mm + '/' + yyyy;
+        console.log('Today function ' + today); 
+
         this.setState({
-            from: today
+            to: slicedDateTo,
+            from: today,
+            test: true
+           
         });
-    }// end of if
 
-  }// end of changeFrom
-
-  changeTo(date) {
-    this.setState({
-      to: date
-    });
-    console.log('vehicles to' + date);
-  }
+        
+    }else {
+        this.setState({
+            to: slicedDateTo           
+        });
+    }
+    
+  }// end of change to
 
 
 

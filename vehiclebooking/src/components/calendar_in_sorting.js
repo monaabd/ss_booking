@@ -10,7 +10,7 @@ class Calendar_in_sorting extends Component {
 constructor (props) {
     super(props);
     this.state = {
-      startDate: moment('2017-10-11'),
+      startDate: moment(),
       endDate: moment()
     };
     this.handleChangeStart = this.handleChangeStart.bind(this);
