@@ -1,6 +1,6 @@
 
 /* ===============
-   GLOBAL  
+   GLOBAL
    =============== */
 
 
@@ -14,13 +14,13 @@ footer {
     text-align: center;
 }
 
-header {    
+header {
     padding: 1em;
     background-color: black;
 }
 
 /* ===============
-   FLEXBOX vehicles list component  
+   FLEXBOX vehicles list component
    =============== */
 .vehiclesContainer {
     display:flex;
@@ -96,7 +96,7 @@ header {
  }
 
 /* ===============
-   LIST  
+   LIST
    =============== */
 
 #datesorting{
@@ -129,7 +129,7 @@ header {
 }
 
 /* ===============
-  Calendar box  
+  Calendar box
 =============== */
 
 .chooseDate {
@@ -138,9 +138,6 @@ header {
 }
 
 #vehicles ul {
-=======
-ul {
->>>>>>> master
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -184,7 +181,7 @@ li button{
     text-align: center;
     padding: 3px 3px;
     text-decoration: none;
-}    
+}
 
 li button:hover {
     background-color: black;
@@ -192,7 +189,7 @@ li button:hover {
 }
 
 /* ===============
-   LOGO 
+   LOGO
    =============== */
 
 <<<<<<< HEAD
