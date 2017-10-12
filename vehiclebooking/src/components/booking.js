@@ -28,10 +28,10 @@ class Booking extends Component {
 						.then(function(response) {
 								return response.json();
 						}).then(function(data) {
-
 						for (var i = 0; i < data.length; i++) {
 								 if(nogood === data[i]._id){
 
+ 
 										//a div with all the selected car info
 										var selectedCarInfo = document.createElement('div');
 										selectedCarInfo.style.textAlign = 'left';
@@ -68,21 +68,39 @@ class Booking extends Component {
 
 
 		}// end for loop
-
 		}) // end get*/
 		} // end showvehicleinfo
 
     apiBook(){
-			let id = this.props.bookingid;
-			let dates = {
-				start: this.state.startDate,
-				end: this.state.endDate
+
+        const _this = this;
+/*
+        fetch('/vehicles')
+        .then(function(response) {
+             return response.json();
+        }).then(function(data) {
+                    _this.setState({
+                            car: data2
+                        });
+                 
+             
+        }); 
+
+*/
+           
+
+		let theid = this.props.bookingid;
+        // it looks for the object in our database
+		var dates = {
+				from: this.state.startDate,
+				to: this.state.endDate
 			}
-			console.log("Id:", id);
-			console.log("Dates:", dates);
-	    fetch("/vehicles/book/"+id, {
+       
+        var stringDates = JSON.stringify(dates);
+        console.log(stringDates);
+	    fetch("/vehicles/book/"+theid, {
 	      method: "PUT",
-				body: JSON.stringify(dates),
+		  body: stringDates,
 	      headers: {
 	       'Accept': 'application/json',
 	       'Content-Type': 'application/json'
@@ -101,7 +119,7 @@ class Booking extends Component {
                 <h4>Selected dates:</h4>
                 <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
                 <Calendar_in_booking />
-                <button>Confirm</button>
+                <button onClick={this.apiBook()}>Confirm</button>
     		</div>
     		);
     }

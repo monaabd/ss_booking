@@ -36,7 +36,7 @@ let vehicleSchema = mongoose.Schema({
   },
     dates: {
       availability: Boolean,
-      date:[{from: Number, to: Number}]
+      date: Array
     }
 });
 
