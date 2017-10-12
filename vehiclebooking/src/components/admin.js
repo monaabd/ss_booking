@@ -7,11 +7,14 @@ import UpdateCar from '../components/updateCar';
       super(props);
        this.state= {
           cars: [],
-          chosenCar: null
+          chosenCar: null,
+          msgClass: "adminHide",
+          msgText: "Error"
         };
   this.printCars = this.printCars.bind(this);
   this.chooseCar = this.chooseCar.bind(this);
   this.updateCar = this.updateCar.bind(this);
+  this.printMsg = this.printMsg.bind(this);
   }
   componentDidMount() {
     fetch('/vehicles')
@@ -19,6 +22,18 @@ import UpdateCar from '../components/updateCar';
       .then(cars => {
         this.setState({ cars });
       });
+    }
+    printMsg(text){
+      console.log(text);
+      this.componentDidMount();
+      this.setState({
+        msgClass: "adminShow",
+        msgText: text
+      });
+
+      setTimeout(function() {
+        this.setState({msgClass: "adminHide"});
+      }.bind(this), 3000);
     }
     chooseCar(event){
       console.log(event.target)
@@ -66,6 +81,10 @@ import UpdateCar from '../components/updateCar';
     );
     }
     else return (
+      <div>
+      <div id="adminMsg" className={this.state.msgClass}>
+      {this.state.msgText}
+      </div>
       <div className="adminContainer">
         <h1>Vehicles view</h1>
         <table className="adminTable">
@@ -77,8 +96,10 @@ import UpdateCar from '../components/updateCar';
           <UpdateCar
               chosen={this.state.chosenCar}
               upCar={this.updateCar}
+              printMsg={this.printMsg}
               />
         </table>
+      </div>
       </div>
    );
   }

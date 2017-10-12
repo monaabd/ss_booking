@@ -51,9 +51,11 @@ class UpdateCar extends Component {
         <tr>
           <td><UpdateButton
             newCar={this.props.chosen}
+            printMsg={this.props.printMsg}
           /></td>
           <td><DeleteButton
              carId={(this.props.chosen === null) ? "" : this.props.chosen._id}
+             printMsg={this.props.printMsg}
            /></td>
           <td><AddButton
             newCar={this.props.chosen}
