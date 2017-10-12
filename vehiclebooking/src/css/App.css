@@ -312,3 +312,26 @@ input {
     text-decoration: none;
     cursor: pointer;
 } 
+
+/* The Close Button */
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+#calendars{
+    display: none; /* Hidden by default */
+    background-color: red;
+    width: 30em;
+    height:15em;
+}
+
