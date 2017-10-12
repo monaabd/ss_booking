@@ -50,11 +50,10 @@ handleChangeEnd(date) {
     }  */
 
     // calculates the number of days between two dates.
-    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-    var firstDate = new Date(2008,2,10);
-    var secondDate = new Date(2008,2,22);
-
-    var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+    //var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    //var firstDate = new Date(2008,2,10);
+    //var secondDate = new Date(2008,2,22);
+    //var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
 
   }
 
