@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../css/Admin.css';
 import UpdateButton from '../components/updateButton';
 import DeleteButton from '../components/deleteButton';
 import AddButton from '../components/addButton';

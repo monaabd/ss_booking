@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../css/Admin.css';
 
 
 class UpdateButton extends Component {
