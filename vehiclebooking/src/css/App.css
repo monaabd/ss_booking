@@ -1,18 +1,15 @@
+
 /* ===============
    GLOBAL
    =============== */
-.App {
-  text-align: center;
-}
 
-div.container {
-    width: 100%;
-}
 
 footer {
     padding: 1em;
     color: white;
+
     background-color: black;
+
     clear: left;
     text-align: center;
 }
@@ -22,21 +19,69 @@ header {
     background-color: black;
 }
 
+/* ===============
+   FLEXBOX vehicles list component
+   =============== */
+.vehiclesContainer {
+    display:flex;
+    flex-direction:row-wrap;
+    width:80%;
+    margin:auto;
+    padding-left:0;
+    padding-right: 0;
+    flex-wrap: wrap;
+
+
+}
+
+.individualContainer {
+    display:flex;
+    flex-direction:column;
+    margin: 10px;
+    align-items: center;
+}
+
+#boxUnderCarImage :first-child {
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+#boxUnderCarImage {
+    width: 150px;
+    height: 120px;
+    margin-top: 10px;
+}
+
+.vehicleBox {
+    flex:auto;
+    padding:20px;
+
+    float: left;
+
+    margin: 10px 5px;
+    border-radius: 1%;
+    border: solid 2px lightgray;
+}
+
+.insideOfCont {
+    flex:1 1 auto;
+}
+
+/*div.container {
+    width: 100%;
+}*/
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* ===============
-   LIST
-   =============== */
+=============== */
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
+.chooseDate {
+  font-size: 13px;
+  color: white;
 }
 
 #vehicles ul {
@@ -44,16 +89,36 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: ;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 li {
     float: right;
 }
 
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
 #vehicles li {
     float: none;
-    color:white;
+    color:black;
 }
 
 li button{
@@ -61,9 +126,8 @@ li button{
     color: black;
     margin-right:1px;
     text-align: center;
-    padding: 5px 5px;
+    padding: 3px 3px;
     text-decoration: none;
-    border:none;
 }
 
 li button:hover {
@@ -79,6 +143,15 @@ li button:hover {
     font-size: 18pt;
 }
 
+.adminList{
+  margin: 10px;
+  border: 1px solid black;
+}
+
+#logoText {
+    font-size: 18pt;
+}
+
 
 #bgcar{
     background-image:url('../media/car.jpg');
@@ -88,28 +161,62 @@ li button:hover {
     height: 80vh;
     width: auto\9; /* ie8 */}
 
+
 /* ===============
-   ADMIN
+   CALENDAR
    =============== */
 
-.adminList{
- margin: 10px;
- border: 1px solid black;
-}
-.adminContainer{
-  display: flex;
-}
-.adminForm td:first-child{
-  text-align: right;
+#calendaricon{
+    /*background-image:url('../media/cal.gif');*/
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border:0;
+    content: 'Pick a date';}
+
+    #logoText {
+    font-size: 18pt;
 }
 
-.adminHide{
-  display: none;
-}
-.adminShow{
+/* ===============
+<<<<<<< HEAD
+   ADMIN
+   =============== */
+input[type="text"] {
   display: block;
+  margin: 0;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: none;
+  -moz-border-radius: none;
+  -ms-border-radius: none;
+  -o-border-radius: none;
+  border-radius: none;
 }
-#adminMsg{
-  color: red;
-  font-size: 24px;
+   padding: 10px;
+  border: solid 1px gainsboro;
+  -webkit-transition: box-shadow 0.3s, border 0.3s;
+  -moz-transition: box-shadow 0.3s, border 0.3s;
+  -o-transition: box-shadow 0.3s, border 0.3s;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus {
+  outline: none;
+    border: solid 1px #707070;
+  -webkit-box-shadow: 0 0 5px 1px #969696;
+  -moz-box-shadow: 0 0 5px 1px #969696;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+
+
+input {
+  border-radius: 3px;
 }

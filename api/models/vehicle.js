@@ -21,14 +21,12 @@ let vehicleSchema = mongoose.Schema({
     gearbox:{
     type: String,
   },
-    model:{
-    type: String,
-  },
   dagshyra:{
     type: Number,
   },
   imgLink:{
     type: String,
+    default: '../media/car.jpg',
   },
     kommentarer:{
     type: Object,

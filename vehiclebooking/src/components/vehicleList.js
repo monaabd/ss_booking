@@ -3,24 +3,42 @@ import '../css/App.css';
 import DateSorting from './dateSorting';
 
 
+
 class VehicleList extends Component {
 	constructor(props){
-    super(props);
-    
+    super(props);   
+        this.state = {
+              from: 'nothing',
+              to: 'nothing'
+        };
+    this.changeFrom = this.changeFrom.bind(this);
+    this.changeTo = this.changeTo.bind(this);
     }
+  changeFrom(date) {
+    this.setState({
+      from: date
+    });
+    this.props.changeFrom(date); // send date to parent Vehicles
+  } 
+
+  changeTo(date) {
+    this.props.changeTo(date); // send date to parent Vehicles
+    this.setState({
+      to: date
+    });
+
+  }
 
     render() {
-    	return(
-    		<div>
-                <h1>Vehicles List</h1>
-                <div><DateSorting /></div>
-                <ul id="vehicles"></ul>
-                <button onClick={this.props.apiRequest}>Click to request db from API</button>
+          return (
+            <div>
+                <div><DateSorting changeFrom={this.changeFrom} changeTo={this.changeTo}/></div>
+                <ul id="vehicles" className= "vehiclesContainer"></ul>
+                <div>{this.props.apiRequest()} </div>
             </div>	
     		);
     }
+}
   
-  }
-
   export default VehicleList;
 

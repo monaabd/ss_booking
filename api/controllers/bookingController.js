@@ -31,7 +31,6 @@ exports.create_a_vehicle = function(req, res) {
   });
 };
 
-
 exports.read_a_vehicle = function(req, res) {
   Vehicle.findById(req.params.vehicleId, function(err, vehicle) {
     if (err)
@@ -40,13 +39,26 @@ exports.read_a_vehicle = function(req, res) {
   });
 };
 
-
 exports.update_a_vehicle = function(req, res) {
+
   let validCar = validateCar(req.body, false);
   Vehicle.findOneAndUpdate({_id: validCar._id}, validCar, {new: true}, function(err, vehicle) {
     if (err)
       res.send("Error updating vehichle:", err);
     res.json("Changes saved to database");
+  });
+}
+
+exports.book_a_vehicle = function(req, res) {
+console.log("Req.body", JSON.stringify(req.body));
+  Vehicle.findOneAndUpdate(
+    {_id: req.params.vehicleId},
+    { $set: { "dates.date": [req.body] } },
+    {new: true},
+    function(err, vehicle) {
+    if (err)
+      console.log(err);
+    console.log("vehicle booked");
   });
 };
 
