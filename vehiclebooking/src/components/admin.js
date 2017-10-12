@@ -57,6 +57,7 @@ import UpdateCar from '../components/updateCar';
       else if (event.target.id === "irent") newCar.dagshyra = event.target.value;
       else if (event.target.id === "iphoto") newCar.imgLink = event.target.value;
       else if (event.target.id === "ifuel") newCar.fuel = event.target.value;
+      else if (event.target.id === "iavailable") newCar.dates.availability = event.target.checked;
       this.setState({
         chosenCar: newCar
       });

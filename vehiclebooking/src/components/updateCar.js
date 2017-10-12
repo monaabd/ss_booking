@@ -51,7 +51,8 @@ class UpdateCar extends Component {
           <td><input id="ifuel"
           onChange={this.props.upCar}
           defaultValue={(this.props.chosen === null) ? "" : this.props.chosen.fuel} /></td></tr>
-          <tr><td><input type="checkbox"/>Availability</td></tr>
+          <tr><td><input  id = "iavailable" type="checkbox" defaultChecked={
+            (this.props.chosen === null) ? false : this.props.chosen.dates.availability}/>Availability</td></tr>
         <tr>
           <td><UpdateButton
             newCar={this.props.chosen}
