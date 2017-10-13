@@ -25,6 +25,12 @@ constructor (props) {
     calendarclose(){
       var calendar = document.getElementById('calendars');
       calendar.style.display = "none"; 
+
+      let thedate1 = JSON.stringify(this.state.endDateX._d);
+      this.props.changeToB(thedate1);
+
+      let thedate2 = JSON.stringify(this.state.startDateX._d);
+      this.props.changeFromB(thedate2);
     }
 
 
@@ -34,7 +40,6 @@ constructor (props) {
     this.setState({
       startDateX: date,
     });
-
     //let thedate = JSON.stringify(date);
     //thedate = thedate.slice(0, 11);
 
@@ -45,6 +50,7 @@ handleChangeEndX(date) {
     this.setState({
       endDateX: date,
     });
+    
 
     //let thedate = JSON.stringify(date);
     //thedate = thedate.slice(0, 11);
