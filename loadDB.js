@@ -71,6 +71,7 @@ var vehicleList = [
            "brand": "Volkswagen",
            "model": "LT 46b",
            "year": 1999,
+           "dagshyra": 488,
            "dates": {
               "availability": true,
               "date": [{"from": 0, "to": 0}]
