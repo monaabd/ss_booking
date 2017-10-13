@@ -114,7 +114,6 @@ header {
     border: 2px solid grey;
     padding: 20px;
     width: 76%;
-    text-align: center;
     margin:auto;
     border-radius: 2px;
     margin-top: 20px;
@@ -335,4 +334,38 @@ input {
     height:15em;
 }
 
+.container {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    margin:auto;
+    border-bottom: 1px solid black;
+}
 
+.flex {
+   flex:1;
+   height: 190px;
+
+}
+
+.flex2 {
+  
+  height: 300px;
+  float: right;
+}
+
+.container2 {
+    display:flex;
+    flex-direction:row;
+    width:30%;
+    margin:auto;
+}
+
+.style {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+.dates {
+  font-size: 12pt;
+}

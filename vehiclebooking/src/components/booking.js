@@ -42,36 +42,64 @@ class Booking extends Component {
 		}).then(function(data) {
 			for (var i = 0; i < data.length; i++) {
 				if(nogood === data[i]._id){ 
+
+					// a div with the selected car image
+					var imageBox = document.createElement('DIV');
+            		imageBox.id = 'imageBox';
+            		imageBox.style.width = '200px';
+            		imageBox.style.height = '150px'; 
+            		imageBox.style.border = 'solid 5px darkgray';
+            		imageBox.style.borderRadius = '4px';
+            		imageBox.style.textAlign = 'center';
+            		imageBox.className = 'flex';
+
+            		var urlString = 'url(' + data[i].imgLink + ')';
+            		imageBox.style.backgroundImage = urlString; 
+            		imageBox.style.backgroundSize = "cover";
+            		imageBox.style.backgroundPosition = 'center';
+
+
 					//a div with all the selected car info
 					var selectedCarInfo = document.createElement('div');
 					selectedCarInfo.style.textAlign = 'left';
 					selectedCarInfo.style.marginLeft = '30px';
 					selectedCarInfo.id = data[i]._id;
-					selectedCarInfo.className = 'boxUnderCarImage';
+					selectedCarInfo.className = 'selectedCarInfo, flex';
+					selectedCarInfo.style.width = '150px';
+					selectedCarInfo.style.height = '120px';
+					selectedCarInfo.style.marginTop = '10px';
 
 					// a div with the car brand and model
 					var carBrand_Model = document.createElement('h3');
 					carBrand_Model.innerHTML = data[i].brand + ', ' + data[i].model;
+					//carBrand_Model.className = 'flex';
+
 
 					// a div with the licence
 					var licence = document.createElement('div');
 					licence.innerHTML = 'Driving licence: ' + data[i].requiredDrivingLicense;
+					//licence.className = 'flex';
 
 					// a div with the gear box
 					var gearBox = document.createElement('div');
 					gearBox.innerHTML = 'Gear box: ' + data[i].gearbox;
+					//gearBox.className = 'flex';
 
 					// a div with price per day
 					var price = document.createElement('div');
 					price.innerHTML = 'Price/day: ' + data[i].dagshyra;
+					//price.className = 'flex';
+
+
+					let renderElements = document.getElementById("renderElements");
 
 					// append all our created elements on selectedCarInfo
 					selectedCarInfo.appendChild(carBrand_Model);
 					selectedCarInfo.appendChild(licence);
 					selectedCarInfo.appendChild(gearBox);
 					selectedCarInfo.appendChild(price);
-
-					document.getElementById("selectedCar").appendChild(selectedCarInfo);
+					renderElements.insertBefore(selectedCarInfo, renderElements.firstChild);
+					renderElements.insertBefore(imageBox, renderElements.firstChild);
 
 				} //end if
 		    }// end for loop
@@ -171,28 +199,42 @@ class Booking extends Component {
     	}
 
 			return(
-    		<div id="booking" className= "individualContainer">
-                <h1>Your booking information</h1>
+    		<div id="booking">
+                <h1 style={{borderBottom: '1px solid black'}}>Your booking information</h1>
                 <div id="information"> {this.showVehicleInfo()}</div>
 
-                <div id="selectedCar"></div>
-                <h4>Selected dates:</h4>
-                <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
-                <h4>Updated dates:</h4>
-                <p>Pick-up date: {this.state.from}, Drop-off date: {this.state.to}</p>
-
-                <CalendarInBooking changeFromB={this.changeFromB} changeToB= {this.changeToB} />
-
-                <button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
-				<div id="myModal" className="modal">
-				  <div className="modal-content">
-				    <span className="close" type="submit" onClick={() => { this.modalclose() }}>&times;</span>
-				    <h1>Booking confirmed!</h1>
-				    <p>You can pick up your booked vehicle at the</p>{thedate}
-				    <p>A confirmation email has been sent to you.</p>
-				  </div>
+                <div className="container" id='renderElements'>
+                	<div className= 'flex'>
+                		<h4>Selected dates:</h4>
+                		<p className='style'>Pick-up date:</p> 
+                		<p className='dates'>{this.props.from}</p>
+                		<p className='style'>Drop-off date:</p>
+                		<p className='dates'>{this.props.to}</p>
+                	</div>
+                	<div className= 'flex'>	
+                		<h4>Updated dates:</h4>
+                		<p className='style'>Pick-up date:</p>
+                		<p className= 'dates'>{this.state.from}</p> 
+                		<p className='style'> Drop-off date:</p> 
+                		<p className= 'dates'>{this.state.to}</p>
+                	</div>	
+                </div>
+                <div className= 'container2'>
+                	<div className= 'flex2'>
+                		<CalendarInBooking changeFromB={this.changeFromB} changeToB= {this.changeToB} />
+                	</div>
+                	<div className= 'flex2'>
+                		<button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
+						<div id="myModal" className="modal">
+				  			<div className="modal-content">
+				    			<span className="close" type="submit" onClick={() => { this.modalclose() }}>&times;</span>
+				    			<h1>Booking confirmed!</h1>
+				    			<p>You can pick up your booked vehicle at the</p>{thedate}
+				    			<p>A confirmation email has been sent to you.</p>
+				  			</div>
+						</div>
+					</div>
 				</div>
-
     		</div>
     		);
     }
