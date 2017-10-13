@@ -341,6 +341,13 @@ input {
     border: 1px solid #888;
     width: 80%; /* Full width */
     min-height: 60vh;
+    text-align: center;
+}
+
+#date{
+  font-weight: bold;
+  font-size: 1.3em;
+  font-stretch: condensed;
 }
 
 /* The Close Button */
