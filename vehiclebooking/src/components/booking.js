@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import moment from 'moment';
 import Calendar_in_booking from './calendar_in_booking';
-//import './scripts.js';
 
 var nogood;
-var result;
 
 class Booking extends Component {
 	constructor(props){
