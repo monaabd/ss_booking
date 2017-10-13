@@ -30,6 +30,8 @@ header {
     padding-left:0;
     padding-right: 0;
     flex-wrap: wrap;
+
+
 }
 
 .individualContainer {
@@ -49,6 +51,32 @@ header {
     height: 120px;
     margin-top: 10px;
 }
+
+
+/* ===============
+   GLOBAL
+   =============== */
+
+
+footer {
+    padding: 1em;
+    color: white;
+
+    background-color: black;
+
+    clear: left;
+    text-align: center;
+}
+
+header {
+    padding: 1em;
+    background-color: black;
+}
+
+/* ===============
+   FLEXBOX vehicles list component
+   =============== */
+
 
 .vehicleBox {
     flex:auto;
@@ -113,11 +141,16 @@ header {
     background-color: #778b8a;
     border: 2px solid grey;
     padding: 20px;
-    width: 76%;
-    text-align: center;
-    margin:auto;
     border-radius: 2px;
     margin-top: 20px;
+}
+
+#container {
+    display:flex;
+    flex-direction:row;
+    width:80%;
+    margin:auto;
+    text-align: center;
 
 }
 
@@ -333,5 +366,6 @@ input {
     width: 30em;
     height:15em;
 }
+
 
 

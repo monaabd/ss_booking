@@ -62,13 +62,14 @@ apiRequest(){
             imageBox.id = 'imageBox';
             imageBox.style.width = '200px';
             imageBox.style.height = '150px'; 
-            imageBox.style.border = 'dotted 1px gray';
-            imageBox.style.borderRadius = '2px';
+            imageBox.style.border = 'solid 2px gray';
+            imageBox.style.borderRadius = '4px';
             imageBox.style.textAlign = 'center';
 
             var urlString = 'url(' + data[i].imgLink + ')';
             imageBox.style.backgroundImage = urlString; 
             imageBox.style.backgroundSize = "cover";
+            imageBox.style.backgroundPosition = 'center';
    
             // set image src to vehicle data
             //f(data[i].imgLink === '../media/car.jpg'){
