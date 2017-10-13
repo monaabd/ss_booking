@@ -50,8 +50,6 @@ handleChangeEndX(date) {
     this.setState({
       endDateX: date,
     });
-    
-
     //let thedate = JSON.stringify(date);
     //thedate = thedate.slice(0, 11);
 
@@ -115,4 +113,3 @@ handleChangeEndX(date) {
 }
 
 export default CalendarInBooking;
-

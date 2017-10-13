@@ -214,7 +214,7 @@ apiRequest(){
         else if (this.state.booking !== ''){
         return (
         <div>
-        <Booking bookingid={this.state.bookingid} from={this.state.from} to={this.state.to} changeFrom={this.changeFrom} changeTo={this.changeTo} />
+        <Booking bookingid={this.state.bookingid} from={this.state.from} to={this.state.to} changeFromV={this.changeFrom} changeToV={this.changeTo} />
         </div>
         );
         }
