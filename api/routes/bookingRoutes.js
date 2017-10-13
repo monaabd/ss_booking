@@ -19,4 +19,7 @@ module.exports = function(router) {
     .put(booking.update_a_vehicle)
     .delete(booking.delete_a_vehicle);
 
+  router.route('/vehicles/book/:vehicleId')
+    .put(booking.book_a_vehicle)
+    
 };
