@@ -1,6 +1,6 @@
 # Olssons fordon AB 
 
-(Serverside group project: )
+Serverside (node.js) Project group 5
 
 ### Installation
 
@@ -8,20 +8,20 @@
 * Start mongoDB (mongod.exe)
 * Open console/git bash in repo root folder (ss_booking)
 
-```
 (ss_booking)
-npm install
 ```
+npm install
 ```
 (ss_booking/vehiclebooking)
+```
 npm install
 ```
-```
 (ss_booking)
+```
 nodemon app.js
 ```
-```
 (ss_booking/vehiclebooking)
+```
 npm start
 ```
 * Application installed and running!
