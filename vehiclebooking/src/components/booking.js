@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import moment from 'moment';
 import Calendar_in_booking from './calendar_in_booking';
-//import './scripts.js';
 
 var nogood;
-var result;
 
 class Booking extends Component {
 	constructor(props){
@@ -15,7 +13,9 @@ class Booking extends Component {
             endDate: moment(),
             car: '',
             from: 'nothing',
-            to: 'nothing'
+            to: 'nothing',
+            showCalendar: 'none',
+            vehicles: []
         };
         this.showVehicleInfo = this.showVehicleInfo.bind(this);
         this.bookedCar = this.showVehicleInfo.bind(this);
@@ -26,9 +26,10 @@ class Booking extends Component {
 		this.changeTo = this.changeTo.bind(this);
     }
 
- 
-    showVehicleInfo(){
 
+
+    showVehicleInfo(){
+        console.log('showVehicleInfo() is running: GET fetch');
   		nogood = this.props.bookingid;
         const _this = this;
 
@@ -82,22 +83,28 @@ class Booking extends Component {
 		}
 		modalclose(){
 			var modal = document.getElementById('myModal');
-			modal.style.display = "none";	
+			modal.style.display = "none";
+			window.location.reload();
 		}
+
 
     apiBook(){
     	// _this hold the React this. We need it here because fetch has also a 'this.'
         const _this = this;
+
         // id of the car that we are about to book.
+
 		let theid = this.props.bookingid;
         // here we add the date for from and to to an object to be sent to mongoDB
 		var dates = {
-				from: this.state.startDate,
-				to: this.state.endDate
+				from: this.props.from,
+				to: this.props.to
 			}   
        // mongoDB can only handle strings.
         var stringDates = JSON.stringify(dates);
+
         // Here we put the dates into the vehicle we are booking 
+
 	    fetch("/vehicles/book/"+theid, {
 	      method: "PUT",
 		  body: stringDates,
@@ -107,7 +114,15 @@ class Booking extends Component {
 	     }
 	    }).then(function(response){
 	    });
-		}
+
+	}
+
+
+    update(data) {
+        this.setState({
+            vehicles: [data]
+        });
+    }
 
 	changeFrom(date) {
     //console.log('Fire changeFrom in booking.js');
@@ -134,7 +149,7 @@ class Booking extends Component {
     		<div id="booking" className= "individualContainer">
                 <div>{this.props.bookingid}</div>
                 <h1>Your booking information</h1>
-                <div>{this.showVehicleInfo()}</div>
+                <button onClick={this.showVehicleInfo}>here</button>
                 <div id="selectedCar"></div>
                 <h4>Selected dates:</h4>
                 <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
@@ -146,6 +161,7 @@ class Booking extends Component {
 				    <p>'Some text in the Modal..'</p>
 				  </div>
 				</div>
+
     		</div>
     		);
     }
