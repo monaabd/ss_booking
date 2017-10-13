@@ -191,6 +191,8 @@ ul {
 
 li {
     float: right;
+    color: white;
+    padding-right: 20px;
 }
 
 
@@ -203,8 +205,8 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
+li :hover {
+    cursor: pointer;
 }
 
 #vehicles li {
@@ -243,13 +245,16 @@ j
 }
 
 
-#bgcar{
-    background-image:url('../media/car.jpg');
-    background-repeat: no-repeat;
+#background{
+    position: relative;
+    width: 100%;
+    min-height: auto;
     background-size: cover;
-    max-width: 100%;
+    background-position: center;
+    background-image:url('../media/car2.jpg');
+    background-repeat: no-repeat;
     height: 80vh;
-    width: auto\9; /* ie8 */}
+    }
 
 /* ===============
    CALENDAR
@@ -590,4 +595,3 @@ margin-top: 25%;
   .footer-distributed .footer-center i{
     margin-left: 0;
   }
-}
