@@ -81,7 +81,8 @@ class Booking extends Component {
 		}
 		modalclose(){
 			var modal = document.getElementById('myModal');
-			modal.style.display = "none";	
+			modal.style.display = "none";
+			window.location.reload();
 		}
 
 
