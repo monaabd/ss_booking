@@ -6,6 +6,8 @@
 }
 .adminContainer{
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .adminForm td:first-child{
   text-align: right;

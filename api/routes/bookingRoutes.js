@@ -21,5 +21,4 @@ module.exports = function(router) {
 
   router.route('/vehicles/book/:vehicleId')
     .put(booking.book_a_vehicle)
-    
 };

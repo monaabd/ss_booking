@@ -29,7 +29,6 @@ db.on('error', function(err){
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 var routes = require('./api/routes/bookingRoutes'); //importing route
 routes(app); //register the route
 
@@ -37,7 +36,6 @@ app.listen(port)
 console.log('RESTful API server started on: ' + port);;
 
 // Ger felmeddelande när man skriver in en felaktig path
-
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
 });
