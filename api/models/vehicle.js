@@ -3,8 +3,8 @@ let mongoose = require('mongoose');
 
 // Vehicle Schema
 let vehicleSchema = mongoose.Schema({
-  name:{
-    fordonstyp: String,
+  fordonstyp:{
+    type: String,
   },
   requiredDrivingLicense:{
     type: String,

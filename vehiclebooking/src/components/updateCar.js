@@ -6,9 +6,6 @@ import AddButton from '../components/addButton';
 
 // This component renders the edit form (input fields and button components)
 class UpdateCar extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
       return (
         <tbody key={(this.props.chosen === null) ? 0 : this.props.chosen._id}>
@@ -51,7 +48,7 @@ class UpdateCar extends Component {
           <td><input id="ifuel"
           onChange={this.props.upCar}
           defaultValue={(this.props.chosen === null) ? "" : this.props.chosen.fuel} /></td></tr>
-          <tr><td><input  id = "iavailable" type="checkbox" defaultChecked={
+          <tr><td><input id="iavailable" type="checkbox" defaultChecked={
             (this.props.chosen === null) ? false : this.props.chosen.dates.availability}/>Availability</td></tr>
         <tr>
           <td><UpdateButton
