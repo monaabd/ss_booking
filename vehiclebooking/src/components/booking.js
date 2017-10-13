@@ -79,13 +79,13 @@ class Booking extends Component {
 	modalopen(){
 		var modal = document.getElementById('myModal');
 		modal.style.display = "block";
-		this.apiBook();
 	}
 	// this is the booking confirmation pop up. CLOSE.
 	modalclose(){
 		var modal = document.getElementById('myModal');
 		modal.style.display = "none";
 		window.location.reload();  //will also reload the page so booking screen is left on completion.
+		this.apiBook();
 	}
 
 	//calls the PUT, from DB to send updated dates to vehicle object.
@@ -135,18 +135,17 @@ class Booking extends Component {
     this.setState({
       to: date
     });
+    
     this.props.changeTo(date); // send date to parent vehicles.js 
-
-  
   }
 
     render() {
 
 			return(
     		<div id="booking" className= "individualContainer">
-                <div>{this.props.bookingid}</div>
                 <h1>Your booking information</h1>
-                <button onClick={this.showVehicleInfo}>here</button>
+                <div> {this.showVehicleInfo()}</div>
+
                 <div id="selectedCar"></div>
                 <h4>Selected dates:</h4>
                 <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>

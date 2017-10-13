@@ -45,7 +45,8 @@ handleChangeEndX(date) {
     this.setState({
       endDateX: date,
     });
-
+    this.props.changeTo(date._d);
+    console.log(date._d);
     //let thedate = JSON.stringify(date);
     //thedate = thedate.slice(0, 11);
 
