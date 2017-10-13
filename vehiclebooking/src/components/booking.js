@@ -67,7 +67,6 @@ class Booking extends Component {
                             selectedCarInfo.id = data[i]._id;
                             selectedCarInfo.className = 'selectedCarInfo, flex';
                             selectedCarInfo.style.width = '150px';
-                            selectedCarInfo.style.height = '120px';
                             selectedCarInfo.style.marginTop = '10px';
 
                             // a div with the car brand and model

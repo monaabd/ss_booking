@@ -28,7 +28,7 @@ class Vehicles extends Component {
         });
     }
 
-apiRequest(){
+    apiRequest(){
 
         const _this = this;
         fetch('/vehicles')
@@ -181,7 +181,7 @@ apiRequest(){
             mm = '0'+mm
         } 
 
-        today = dd + '/' + mm + '/' + yyyy;
+        today = yyyy + '-' + mm + '-' + dd;
         console.log('Today function ' + today); 
 
         this.setState({

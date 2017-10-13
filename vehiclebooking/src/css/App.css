@@ -412,9 +412,11 @@ margin-bottom: 25%;
 
 .flex {
    flex:1;
-   height: 190px;
-
+   height: 200px;
+   border-right: 1px solid gray;
+   margin-right: 10px;
 }
+
 
 .flex2 {
   
