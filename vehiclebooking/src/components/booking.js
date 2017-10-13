@@ -34,9 +34,6 @@ class Booking extends Component {
         console.log('showVehicleInfo() is running: GET fetch');
 		var theinfo = document.getElementById('information');
         if (theinfo == null){
-        	console.log(theinfo);
-
-        
   		nogood = this.props.bookingid;
 
 		fetch('/vehicles')
@@ -85,8 +82,22 @@ class Booking extends Component {
 
 	// this is the booking confirmation pop up. OPEN
 	modalopen(){
+		console.log(this.state.from);
+		console.log(this.props.from);
+
+		if(this.state.from === 'nothing' &&  this.props.from === undefined){
+			alert('Please choose date booking');
+		}
+
+		else if (this.state.from !== 'nothing' && this.props.from === undefined){
+			alert('Please choose date calendar');
+		}
+		else{
 		var modal = document.getElementById('myModal');
-		modal.style.display = "block";
+		modal.style.display = "block";	
+		}
+		
+	
 	}
 	// this is the booking confirmation pop up. CLOSE.
 	modalclose(){
@@ -151,6 +162,13 @@ class Booking extends Component {
   }
 
     render() {
+    	var thedate;
+    	if(this.props.from === 'nothing' || this.props.from === undefined){
+    	    thedate = this.state.from.slice(1, 11);
+    	}
+    	else{
+    		thedate = this.props.from.slice(1, 11);
+    	}
 
 			return(
     		<div id="booking" className= "individualContainer">
@@ -169,7 +187,9 @@ class Booking extends Component {
 				<div id="myModal" className="modal">
 				  <div className="modal-content">
 				    <span className="close" type="submit" onClick={() => { this.modalclose() }}>&times;</span>
-				    <p>'Some text in the Modal..'</p>
+				    <h1>Booking confirmed!</h1>
+				    <p>You can pick up your booked vehicle at the</p>{thedate}
+				    <p>A confirmation email has been sent to you.</p>
 				  </div>
 				</div>
 
