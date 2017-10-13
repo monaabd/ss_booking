@@ -65,6 +65,9 @@ apiRequest(){
             imageBox.style.border = 'dotted 1px gray';
             imageBox.style.borderRadius = '2px';
             imageBox.style.textAlign = 'center';
+            imageBox.style.backgroundSize = 'cover';
+            imageBox.style.backgroundPosition = 'center';
+            imageBox.style.backgroundImage = "url('http://www.imprintables.com/content/images/thumbs/default-image_450.png')";
 
 
             // then make a div to hold the image.
@@ -74,10 +77,10 @@ apiRequest(){
 
             // set image src to vehicle data
             if(data[i].imgLink === '../media/car.jpg'){
-                image.src = 'http://www.imprintables.com/content/images/thumbs/default-image_450.png';
+                imageBox.style.backgroundImage = "url('http://www.imprintables.com/content/images/thumbs/default-image_450.png')";
             }
             else{
-                image.src = data[i].imgLink;
+                imageBox.style.backgroundImage = data[i].imgLink;
             }
             image.style.width = 200 + 'px';
             image.style.height = 'auto';
