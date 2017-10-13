@@ -7,7 +7,6 @@ class Start extends Component {
     return (
       <div id="background">
       	<div id='filter'>
-      		<img src= '../media/purpleCar.png' />
       	</div>
       </div>
     );
