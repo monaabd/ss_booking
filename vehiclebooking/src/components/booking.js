@@ -154,9 +154,9 @@ class Booking extends Component {
                 <CalendarInBooking changeFrom={this.changeFrom} changeTo= {this.changeTo} />
 
                 <button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
-				<div id="myModal" class="modal">
-				  <div class="modal-content">
-				    <span class="close" type="submit" onClick={() => { this.modalclose() }}>&times;</span>
+				<div id="myModal" className="modal">
+				  <div className="modal-content">
+				    <span className="close" type="submit" onClick={() => { this.modalclose() }}>&times;</span>
 				    <p>'Some text in the Modal..'</p>
 				  </div>
 				</div>

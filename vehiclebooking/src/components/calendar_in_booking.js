@@ -74,7 +74,7 @@ handleChangeEndX(date) {
      <div> 
        <button id="myBtn1" type="submit" onClick={() => { this.calendaropen() }}>Change dates</button>
        <div id="calendars"> 
-       <span class="close1" type="submit" onClick={() => { this.calendarclose() }}>&times;</span>
+       <span className="close1" type="submit" onClick={() => { this.calendarclose() }}>&times;</span>
         <p className="chooseDate">Pick-up date:</p>
         <DatePicker
           todayButton={"Today"}
