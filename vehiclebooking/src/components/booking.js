@@ -165,6 +165,8 @@ class Booking extends Component {
 
                 <div id="selectedCar"></div>
                 <h4>Selected dates:</h4>
+                <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
+                <h4>Updated dates:</h4>
                 <p>Pick-up date: {this.state.from}, Drop-off date: {this.state.to}</p>
 
                 <CalendarInBooking changeFromB={this.changeFromB} changeToB= {this.changeToB} />
