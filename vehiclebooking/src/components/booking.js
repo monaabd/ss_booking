@@ -211,7 +211,7 @@ class Booking extends Component {
                 		<button id="myBtn" type="submit" onClick={() => {this.modalopen()}}>Confirm</button>
 						<div id="myModal" className="modal">
 				  			<div className="modal-content">
-				    			<span className="close" type="submit" onClick={() => {this.modalclose()}}>close</span>
+				    			<span className="close" type="submit" onClick={() => {this.modalclose()}}> X </span>
 				    			<h1>Booking confirmed!</h1>
 				    			<p>You can pick up your booked vehicle at the</p>{thedate}
 				    			<p>A confirmation email has been sent to you.</p>
