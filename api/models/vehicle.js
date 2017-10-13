@@ -26,7 +26,7 @@ let vehicleSchema = mongoose.Schema({
   },
   imgLink:{
     type: String,
-    default: '../media/car.jpg',
+    default: 'http://www.imprintables.com/content/images/thumbs/default-image_450.png',
   },
     kommentarer:{
     type: Object,
