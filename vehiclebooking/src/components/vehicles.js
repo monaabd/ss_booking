@@ -65,25 +65,19 @@ apiRequest(){
             imageBox.style.border = 'dotted 1px gray';
             imageBox.style.borderRadius = '2px';
             imageBox.style.textAlign = 'center';
-            imageBox.style.backgroundSize = 'cover';
-            imageBox.style.backgroundPosition = 'center';
-            imageBox.style.backgroundImage = "url('http://www.imprintables.com/content/images/thumbs/default-image_450.png')";
 
-
-            // then make a div to hold the image.
-            var image = document.createElement("IMG");
-            image.className = 'insideOfCont';
-            image.style.borderRadius = '3px';
-
+            var urlString = 'url(' + data[i].imgLink + ')';
+            imageBox.style.backgroundImage = urlString; 
+            imageBox.style.backgroundSize = "cover";
+   
             // set image src to vehicle data
-            if(data[i].imgLink === '../media/car.jpg'){
-                imageBox.style.backgroundImage = "url('http://www.imprintables.com/content/images/thumbs/default-image_450.png')";
-            }
-            else{
-                imageBox.style.backgroundImage = data[i].imgLink;
-            }
-            image.style.width = 200 + 'px';
-            image.style.height = 'auto';
+            //f(data[i].imgLink === '../media/car.jpg'){
+             //   image.src = 'http://www.imprintables.com/content/images/thumbs/default-image_450.png';
+            //}
+            //else{
+            //    image.src = data[i].imgLink;
+            //}
+           
 
             // box including all car specifications
             var boxUnderCarImage = document.createElement('DIV');
@@ -123,7 +117,6 @@ apiRequest(){
             // -> put textbox and image inside box
             //  box.appendChild(textbox);
             box.appendChild(imageBox);
-            imageBox.appendChild(image);
             box.appendChild(boxUnderCarImage);
             boxUnderCarImage.appendChild(nameModel);
             boxUnderCarImage.appendChild(licence);
