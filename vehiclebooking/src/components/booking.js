@@ -104,8 +104,8 @@ class Booking extends Component {
 
         // here we add the date for from and to to an object to be sent to mongoDB
 		var dates = {
-				from: this.state.from,
-				to: this.state.to
+				from: this.props.from,
+				to: this.props.to
 			}  
 
        // mongoDB can only handle strings.
@@ -131,29 +131,23 @@ class Booking extends Component {
     }
 
 	changeFrom(date) {
-    //console.log('Fire changeFrom in booking.js');
-    this.setState({
-      from: date
-    });
-    this.props.changeFrom(date); // send date to parent vehicles.js 
+    this.props.from(date); // send date to parent vehicles.js 
   }
 
   	changeFromB(date) {
     this.setState({
       from: date
     });
+    this.props.changeFromV(date);
   }
   	changeToB(date) {
     this.setState({
       to: date
     });
+    this.props.changeToV(date);
   }
   changeTo(date) {
-    //console.log('Fire changeTo in booking.js');
-    this.setState({
-      to: date
-    }); 
-    this.props.changeTo(date); // send date to parent vehicles.js 
+    this.props.to(date); // send date to parent vehicles.js 
   }
 
     render() {
@@ -165,7 +159,7 @@ class Booking extends Component {
 
                 <div id="selectedCar"></div>
                 <h4>Selected dates:</h4>
-                <p>Pick-up date: {this.state.from}, Drop-off date: {this.state.to}</p>
+                <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
 
                 <CalendarInBooking changeFromB={this.changeFromB} changeToB= {this.changeToB} />
 
