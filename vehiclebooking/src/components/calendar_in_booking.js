@@ -75,37 +75,40 @@ handleChangeEndX(date) {
 
   render() {
     return (
-     <div> 
+     <div > 
        <button id="myBtn1" type="submit" onClick={() => { this.calendaropen() }}>Change dates</button>
        <div id="calendars"> 
-       <span className="close1" type="submit" onClick={() => { this.calendarclose() }}>&times;</span>
-        <p className="chooseDate">Pick-up date:</p>
-        <DatePicker
-          todayButton={"Today"}
-          dateFormat="YYYY/MM/DD"
-          showWeekNumbers
-          monthsShown={1}
-          minDate={this.state.startDateX}
-          selected={this.state.startDateX}
-          selectsStart
-          startDate={this.state.startDateX}
-          endDate={this.state.endDateX}
-          onChange={this.handleChangeStartX}
-        />
-        <p className="chooseDate">Drop-off date:</p>
-        <DatePicker 
-          todayButton={"Today"}
-          dateFormat="YYYY/MM/DD"
-          openToDate={moment("2017-10-08")}
-          showWeekNumbers
-          monthsShown={1} 
-          minDate={this.state.startDateX}
-          selected={this.state.endDateX}
-          selectsEnd
-          startDate={this.state.startDateX}
-          endDate={this.state.endDateX}
-          onChange={this.handleChangeEndX}
-        />
+       <span className="close1" type="submit" onClick={() => { this.calendarclose() }}>  X  </span>
+        
+        <div id="calendarBooking">
+          <p className="chooseDate">Pick-up date:</p>
+          <DatePicker
+            todayButton={"Today"}
+            dateFormat="YYYY/MM/DD"
+            showWeekNumbers
+            monthsShown={1}
+            minDate={this.state.startDateX}
+            selected={this.state.startDateX}
+            selectsStart
+            startDate={this.state.startDateX}
+            endDate={this.state.endDateX}
+            onChange={this.handleChangeStartX}
+          />
+          <p className="chooseDate">Drop-off date:</p>
+          <DatePicker 
+            todayButton={"Today"}
+            dateFormat="YYYY/MM/DD"
+            openToDate={moment("2017-10-08")}
+            showWeekNumbers
+            monthsShown={1} 
+            minDate={this.state.startDateX}
+            selected={this.state.endDateX}
+            selectsEnd
+            startDate={this.state.startDateX}
+            endDate={this.state.endDateX}
+            onChange={this.handleChangeEndX}
+          />
+        </div> 
         </div> 
       </div> 
     );

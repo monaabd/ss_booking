@@ -208,7 +208,7 @@ class Booking extends Component {
                 		<CalendarInBooking changeFromB={this.changeFromB} changeToB= {this.changeToB} />
                 	</div>
                 	<div className= 'flex2'>
-                		<button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
+                		<button id="myBtn" type="submit" onClick={() => {this.modalopen()}}>Confirm</button>
 						<div id="myModal" className="modal">
 				  			<div className="modal-content">
 				    			<span className="close" type="submit" onClick={() => {this.modalclose()}}>close</span>
