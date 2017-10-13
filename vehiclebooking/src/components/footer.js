@@ -8,9 +8,9 @@ class Footer extends Component {
       <footer className="footer-distributed">
           <div className="footer-left">
               <h3>Olssons fordon AB</h3>
-              <p class="footer-links">
-                  <a href="#">Home</a> &nbsp; &nbsp;
-                  <a href="#">Vehicles</a>
+              <p className="footer-links">
+                  <a href="/">Home</a> &nbsp; &nbsp;
+                  <a href="/vehicles">Vehicles</a>
               </p>
               <p className="footer-company-name">Olssons fordon AB &copy; 2017</p>
           </div>
