@@ -92,8 +92,8 @@ class Booking extends Component {
 		let theid = this.props.bookingid;
         // here we add the date for from and to to an object to be sent to mongoDB
 		var dates = {
-				from: this.state.startDate,
-				to: this.state.endDate
+				from: this.props.from,
+				to: this.props.to
 			}   
        // mongoDB can only handle strings.
         var stringDates = JSON.stringify(dates);

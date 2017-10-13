@@ -50,15 +50,16 @@ exports.update_a_vehicle = function(req, res) {
 }
 
 exports.book_a_vehicle = function(req, res) {
+
 console.log("Req.body", req.body);
   Vehicle.findOneAndUpdate(
     {_id: req.params.vehicleId},
-    { $set: { "dates.date": req.body } },
-    {new: true},
+    { $addToSet : {dates.date: req.body}}},
     function(err, vehicle) {
     if (err)
       console.log(err);
     console.log("vehicle booked");
+    console.log(dates.date);
   });
 };
 
