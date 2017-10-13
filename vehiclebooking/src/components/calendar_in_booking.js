@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
 
-class Calendar_in_booking extends Component {
+class CalendarInBooking extends Component {
 constructor (props) {
     super(props)
     this.state = {
@@ -32,9 +32,8 @@ constructor (props) {
     this.setState({
       startDateX: date,
     });
-    let thedate = JSON.stringify(date);
-
-    thedate = thedate.slice(0, 11);
+    //let thedate = JSON.stringify(date);
+    //thedate = thedate.slice(0, 11);
 
   }
  
@@ -42,10 +41,8 @@ handleChangeEndX(date) {
     this.setState({
       endDateX: date,
     });
-    let thedate = JSON.stringify(date);
-
-
-    thedate = thedate.slice(0, 11);
+    //let thedate = JSON.stringify(date);
+    //thedate = thedate.slice(0, 11);
 
 
     /* I am trying to pick out all the dates that are selected so that we can 
@@ -58,11 +55,11 @@ handleChangeEndX(date) {
     }  */
 
     // calculates the number of days between two dates.
-    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-    var firstDate = new Date(2008,2,10);
-    var secondDate = new Date(2008,2,22);
+    //var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    //var firstDate = new Date(2008,2,10);
+    //var secondDate = new Date(2008,2,22);
 
-    var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+    //var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
   
   }
 
@@ -105,5 +102,5 @@ handleChangeEndX(date) {
   }
 }
 
-export default Calendar_in_booking;
+export default CalendarInBooking;
 

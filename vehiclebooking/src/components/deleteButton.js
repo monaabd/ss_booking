@@ -11,7 +11,7 @@ class DeleteButton extends Component {
     var DelComponent = this;
     let item = JSON.stringify(this.props.carId);
     console.log(item);
-    fetch("/vehicles" + '/' + item, {
+    fetch("/vehicles/" + item, {
     method: "DELETE"
     }).then(response =>{
      DelComponent.props.printMsg("Vehicle with Id: "+item+" successfully deleted")

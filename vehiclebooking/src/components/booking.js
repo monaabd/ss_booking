@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import moment from 'moment';
-import Calendar_in_booking from './calendar_in_booking';
+import CalendarInBooking from './calendar_in_booking';
 
 var nogood;
 
@@ -25,10 +25,12 @@ class Booking extends Component {
     }
 
 
-
+	//calls the GET, from DB to display vehicle info.
     showVehicleInfo(){
         console.log('showVehicleInfo() is running: GET fetch');
   		nogood = this.props.bookingid;
+
+  		// _this hold the React this. We need it here because fetch has also a 'this.'
         const _this = this;
 
 		fetch('/vehicles')
@@ -72,37 +74,37 @@ class Booking extends Component {
 				}
 		    }// end for loop
 	    }) // end get
-} // end showvehicleinfo
-
-		modalopen(){
-			var modal = document.getElementById('myModal');
-			modal.style.display = "block";
-			this.apiBook();
-		}
-		modalclose(){
-			var modal = document.getElementById('myModal');
-			modal.style.display = "none";
-			window.location.reload();
-		}
+	} // end showvehicleinfo
 
 
+	// this is the booking confirmation pop up. OPEN
+	modalopen(){
+		var modal = document.getElementById('myModal');
+		modal.style.display = "block";
+		this.apiBook();
+	}
+	// this is the booking confirmation pop up. CLOSE.
+	modalclose(){
+		var modal = document.getElementById('myModal');
+		modal.style.display = "none";
+		window.location.reload();  //will also reload the page so booking screen is left on completion.
+	}
+
+	//calls the PUT, from DB to send updated dates to vehicle object.
     apiBook(){
-    	// _this hold the React this. We need it here because fetch has also a 'this.'
-        const _this = this;
-
         // id of the car that we are about to book.
-
 		let theid = this.props.bookingid;
+
         // here we add the date for from and to to an object to be sent to mongoDB
 		var dates = {
 				from: this.props.from,
 				to: this.props.to
-			}   
+			}  
+
        // mongoDB can only handle strings.
         var stringDates = JSON.stringify(dates);
 
         // Here we put the dates into the vehicle we are booking 
-
 	    fetch("/vehicles/book/"+theid, {
 	      method: "PUT",
 		  body: stringDates,
@@ -112,8 +114,7 @@ class Booking extends Component {
 	     }
 	    }).then(function(response){
 	    });
-
-	}
+	}// end apiBook
 
 
     update(data) {
@@ -133,7 +134,7 @@ class Booking extends Component {
                 <h4>Selected dates:</h4>
                 <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
 
-                <Calendar_in_booking />
+                <CalendarInBooking />
                 <button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
 				<div id="myModal" class="modal">
 				  <div class="modal-content">

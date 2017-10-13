@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
 
-class Calendar_in_sorting extends Component {
+class CalendarInSorting extends Component {
 constructor (props) {
     super(props);
     this.state = {
@@ -23,10 +23,9 @@ constructor (props) {
     });
     let thedate = JSON.stringify(date);
 
-    this.props.changeFrom(thedate); // send date to parent DateSorting
+    this.props.ChangeFrom(thedate); // send date to parent DateSorting
 
     thedate = thedate.slice(0, 11);
-
   }
 
 handleChangeEnd(date) {
@@ -35,7 +34,7 @@ handleChangeEnd(date) {
     });
     let thedate = JSON.stringify(date);
 
-    this.props.changeTo(thedate); // send date to parent DateSorting
+    this.props.ChangeTo(thedate); // send date to parent DateSorting
 
     thedate = thedate.slice(0, 11);
 
@@ -91,4 +90,4 @@ handleChangeEnd(date) {
   }
 }
 
-export default Calendar_in_sorting;
+export default CalendarInSorting;

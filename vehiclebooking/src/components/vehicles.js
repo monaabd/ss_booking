@@ -73,7 +73,6 @@ class Vehicles extends Component {
         var image = document.createElement("IMG");
         image.className = 'insideOfCont';
         image.style.borderRadius = '3px';
-        console.log(data[i].imgLink);
         // set image src to vehicle data
             if(data[i].imgLink === '../media/car.jpg'){
                 image.src = 'http://www.imprintables.com/content/images/thumbs/default-image_450.png';

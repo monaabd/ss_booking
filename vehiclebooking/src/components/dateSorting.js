@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import Calendar_in_sorting from './calendar_in_sorting';
+import CalendarInSorting from './calendar_in_sorting';
 
 class DateSorting extends Component {
 	constructor(props){
@@ -36,7 +36,7 @@ class DateSorting extends Component {
     render() {
     	return(
             <div id="datesorting">
-            <Calendar_in_sorting changeFrom={this.changeFrom} changeTo= {this.changeTo} />  
+            <CalendarInSorting ChangeFrom={this.changeFrom} ChangeTo= {this.changeTo} />  
             </div>
     		);
     }
