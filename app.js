@@ -5,18 +5,20 @@ var express = require('express'),
   port = process.env.PORT || 4000,
   mongoose = require('mongoose'),
   Vehicle = require('./api/models/vehicle'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  loadDB = require('./loadDB.js');
 
   app.use(express.static(__dirname + '/public'));
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/vehiclesDB');
+mongoose.connect('mongodb://localhost/vehiclesDBGroup5');
 let db = mongoose.connection;
 
 // Check connection
 db.once('open', function(){
-  console.log('Connected to MongoDB');
+  console.log('Connected to MongoDB, checking if database is empty...');
+  loadDB.autoLoadDb();
 });
 
 // Check for DB errors
@@ -30,7 +32,6 @@ app.use(bodyParser.json());
 
 var routes = require('./api/routes/bookingRoutes'); //importing route
 routes(app); //register the route
-
 
 app.listen(port)
 console.log('RESTful API server started on: ' + port);;
