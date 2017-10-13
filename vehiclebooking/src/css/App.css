@@ -208,7 +208,7 @@ j
 
 
 #bgcar{
-    background-image:url('../media/car.jpg');
+    background-image:url('../media/car6.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
@@ -270,3 +270,31 @@ input[type="text"]:focus {
 input {
   border-radius: 3px;
 }
+
+/* ===== animationIcon ===== */
+
+
+    #animationIcon {
+        background-image:url('../media/car5.jpg');
+        width:44%;
+        height:35%;
+        background-repeat: no-repeat;
+        position: relative;
+        animation: mymove 10s 5;
+        -webkit-animation: mymove 10s 5; /* Safari 4.0 - 8.0 */
+        border-radius: 15%;
+        transition: width 2s, height 7s;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes mymove {
+        from {left: 0px;}
+        to {left: 1000px;}
+    }
+
+    @keyframes mymove {
+        from {left: 0px;}
+        to {left: 1000px;}
+        
+
+    }
