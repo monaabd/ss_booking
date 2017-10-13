@@ -3,6 +3,8 @@ import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
+import Calendar_in_booking from './calendar_in_sorting';
+
 
 
 
@@ -18,6 +20,7 @@ constructor (props) {
   }
 
   handleChangeStart(date) {
+    //console.log('Fire changeFrom in Calendar_in_sorting.js');
     this.setState({
       startDate: date,
     });
@@ -30,6 +33,7 @@ constructor (props) {
   }
 
 handleChangeEnd(date) {
+    // console.log('Fire changeTo in Calendar_in_sorting.js');
     this.setState({
       endDate: date,
     });

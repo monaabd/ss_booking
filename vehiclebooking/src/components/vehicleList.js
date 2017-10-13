@@ -15,18 +15,21 @@ class VehicleList extends Component {
     this.changeTo = this.changeTo.bind(this);
     }
   changeFrom(date) {
+    //console.log('Fire changeFrom in vehicleList.js');
+
     this.setState({
       from: date
     });
     this.props.changeFrom(date); // send date to parent Vehicles
-    console.log('in vehicle List ' + date);
   } 
 
   changeTo(date) {
-    this.props.changeTo(date); // send date to parent Vehicles
+    //console.log('Fire changeTo in vehicleList.js');
+
     this.setState({
       to: date
     });
+    this.props.changeTo(date); // send date to parent Vehicles
 
   }
 

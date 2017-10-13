@@ -29,23 +29,29 @@ constructor (props) {
 
 
   handleChangeStartX(date) {
+ // console.log('Fire changeFrom in Calendar_in_booking.js');
+
     this.setState({
       startDateX: date,
     });
+    console.log('booking start ' + this.state.startDateX);
     let thedate = JSON.stringify(date);
-
     thedate = thedate.slice(0, 11);
+    this.props.changeFrom(thedate); // send date to parent booking.js
+
 
   }
  
 handleChangeEndX(date) {
+ // console.log('Fire changeTo in Calendar_in_booking.js');
     this.setState({
       endDateX: date,
     });
     let thedate = JSON.stringify(date);
-
-
     thedate = thedate.slice(0, 11);
+    this.props.changeTo(thedate); // send date to parent booking.js
+
+
 
 
     /* I am trying to pick out all the dates that are selected so that we can 
