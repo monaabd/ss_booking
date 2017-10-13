@@ -23,6 +23,8 @@ class Booking extends Component {
 		this.modalopen = this.modalopen.bind(this);	
 		this.modalclose = this.modalclose.bind(this);	
 		this.changeFrom = this.changeFrom.bind(this);
+		this.changeFromB = this.changeFromB.bind(this);
+		this.changeToB = this.changeToB.bind(this);
 		this.changeTo = this.changeTo.bind(this);
     }
 
@@ -30,6 +32,11 @@ class Booking extends Component {
 	//calls the GET, from DB to display vehicle info.
     showVehicleInfo(){
         console.log('showVehicleInfo() is running: GET fetch');
+		var theinfo = document.getElementById('information');
+        if (theinfo == null){
+        	console.log(theinfo);
+
+        
   		nogood = this.props.bookingid;
 
 		fetch('/vehicles')
@@ -69,9 +76,10 @@ class Booking extends Component {
 
 					document.getElementById("selectedCar").appendChild(selectedCarInfo);
 
-				}
+				} //end if
 		    }// end for loop
 	    }) // end get
+	    } //end if div is empty
 	} // end showvehicleinfo
 
 
@@ -86,6 +94,7 @@ class Booking extends Component {
 		modal.style.display = "none";
 		window.location.reload();  //will also reload the page so booking screen is left on completion.
 		this.apiBook();
+
 	}
 
 	//calls the PUT, from DB to send updated dates to vehicle object.
@@ -95,8 +104,8 @@ class Booking extends Component {
 
         // here we add the date for from and to to an object to be sent to mongoDB
 		var dates = {
-				from: this.props.from,
-				to: this.props.to
+				from: this.state.from,
+				to: this.state.to
 			}  
 
        // mongoDB can only handle strings.
@@ -126,16 +135,24 @@ class Booking extends Component {
     this.setState({
       from: date
     });
-
     this.props.changeFrom(date); // send date to parent vehicles.js 
   }
 
+  	changeFromB(date) {
+    this.setState({
+      from: date
+    });
+  }
+  	changeToB(date) {
+    this.setState({
+      to: date
+    });
+  }
   changeTo(date) {
     //console.log('Fire changeTo in booking.js');
     this.setState({
       to: date
-    });
-    
+    }); 
     this.props.changeTo(date); // send date to parent vehicles.js 
   }
 
@@ -144,13 +161,13 @@ class Booking extends Component {
 			return(
     		<div id="booking" className= "individualContainer">
                 <h1>Your booking information</h1>
-                <div> {this.showVehicleInfo()}</div>
+                <div id="information"> {this.showVehicleInfo()}</div>
 
                 <div id="selectedCar"></div>
                 <h4>Selected dates:</h4>
-                <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
+                <p>Pick-up date: {this.state.from}, Drop-off date: {this.state.to}</p>
 
-                <CalendarInBooking changeFrom={this.changeFrom} changeTo= {this.changeTo} />
+                <CalendarInBooking changeFromB={this.changeFromB} changeToB= {this.changeToB} />
 
                 <button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
 				<div id="myModal" className="modal">
