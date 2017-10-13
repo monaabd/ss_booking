@@ -58,7 +58,6 @@ class Booking extends Component {
             		imageBox.style.backgroundSize = "cover";
             		imageBox.style.backgroundPosition = 'center';
 
-
 					//a div with all the selected car info
 					var selectedCarInfo = document.createElement('div');
 					selectedCarInfo.style.textAlign = 'left';
@@ -69,12 +68,12 @@ class Booking extends Component {
 					selectedCarInfo.style.height = '120px';
 					selectedCarInfo.style.marginTop = '10px';
 
+
 					// a div with the car brand and model
 					var carBrand_Model = document.createElement('h3');
 					carBrand_Model.innerHTML = data[i].brand + ', ' + data[i].model;
 					//carBrand_Model.className = 'flex';
-
-
+					
 					// a div with the licence
 					var licence = document.createElement('div');
 					licence.innerHTML = 'Driving licence: ' + data[i].requiredDrivingLicense;
@@ -85,6 +84,7 @@ class Booking extends Component {
 					gearBox.innerHTML = 'Gear box: ' + data[i].gearbox;
 					//gearBox.className = 'flex';
 
+
 					// a div with price per day
 					var price = document.createElement('div');
 					price.innerHTML = 'Price/day: ' + data[i].dagshyra;
@@ -92,6 +92,7 @@ class Booking extends Component {
 
 
 					let renderElements = document.getElementById("renderElements");
+
 
 					// append all our created elements on selectedCarInfo
 					selectedCarInfo.appendChild(carBrand_Model);
