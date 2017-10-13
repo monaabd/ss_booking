@@ -1,61 +1,39 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../css/App.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
-
 class CalendarInSorting extends Component {
-constructor (props) {
-    super(props);
-    this.state = {
-      startDate: moment(),
-      endDate: moment()
-    };
-    this.handleChangeStart = this.handleChangeStart.bind(this);
-    this.handleChangeEnd = this.handleChangeEnd.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            startDate: moment(),
+            endDate: moment()
+        }; // end state
+        this.handleChangeStart = this.handleChangeStart.bind(this);
+        this.handleChangeEnd = this.handleChangeEnd.bind(this);
+    }; // end constructor
 
-  handleChangeStart(date) {
-    //console.log('Fire changeFrom in Calendar_in_sorting.js');
-    this.setState({
-      startDate: date,
-    });
-    let thedate = JSON.stringify(date);
+    // changes state of date FROM in this component. Also passes along date to parent.
+    handleChangeStart(date) {
+        this.setState({
+            startDate: date,
+        });
+        let thedate = JSON.stringify(date);
+        thedate = thedate.slice(0, 11);
+        this.props.ChangeFrom(thedate); // send date to parent DateSorting      
+    }; // end handleChangeStart
 
-    this.props.ChangeFrom(thedate); // send date to parent DateSorting
-
-    thedate = thedate.slice(0, 11);
-  }
-
-handleChangeEnd(date) {
-    // console.log('Fire changeTo in Calendar_in_sorting.js');
-    this.setState({
-      endDate: date,
-    });
-    let thedate = JSON.stringify(date);
-
-    this.props.ChangeTo(thedate); // send date to parent DateSorting
-
-    thedate = thedate.slice(0, 11);
-
-
-    /* I am trying to pick out all the dates that are selected so that we can
-    show that in the availability.
-     I don't know why it's not working. I tried doing it with another class, the
-    'vehileBox' (that we declaired in the vehicle.js file) and it worked */
-   /* var selectedDate = document.getElementsByClassName("react-datepicker__day--range-start");
-    for (let key in selectedDate){
-    console.log(selectedDate[0].value); //second console output
-    }  */
-
-    // calculates the number of days between two dates.
-    //var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-    //var firstDate = new Date(2008,2,10);
-    //var secondDate = new Date(2008,2,22);
-    //var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-
-  }
+    // changes state of date TO in this component. Also passes along date to parent.
+    handleChangeEnd(date) {
+        this.setState({
+            endDate: date,
+        });
+        let thedate = JSON.stringify(date);
+        thedate = thedate.slice(0, 11);
+        this.props.ChangeTo(thedate); // send date to parent DateSorting
+    }; // end handleChangeEnd
 
   render() {
     return (
@@ -88,7 +66,6 @@ handleChangeEnd(date) {
       />
        </div>
     );
-  }
-}
-
+  }; //end render
+}; //end component
 export default CalendarInSorting;
