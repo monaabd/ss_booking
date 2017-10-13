@@ -21,9 +21,10 @@
   color: yellow;
   font-size: 24px;
   position: absolute;
-  width: 300px;
+  width: 500px;
   height: auto;
-  left: 50%;
+  left: 25%;
+  word-wrap: break-word;
   background-color: black;
   border: 1px solid grey;
 }

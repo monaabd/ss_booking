@@ -13,7 +13,9 @@ class UpdateButton extends Component {
   */
   apiUpdate(){
     var updateComponent = this;
-    let car = JSON.stringify(this.props.newCar);
+    let car = this.props.newCar;
+    car.dates.availability = document.getElementById("iavailable").checked;
+    car = JSON.stringify(car);
     fetch('/vehicles/'+car._id, {
       method: "PUT",
       body: car,
