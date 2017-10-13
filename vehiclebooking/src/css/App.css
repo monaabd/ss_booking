@@ -248,13 +248,12 @@ j
 #background{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     min-height: auto;
     background-size: cover;
     background-position: center;
     background-image:url('../media/car2.jpg');
     background-repeat: no-repeat;
-    height: 80vh;
     }
 
 /* ===============
