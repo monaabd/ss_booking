@@ -14,22 +14,21 @@ class DateSorting extends Component {
     }
 
   changeFrom(date) {
-
-    this.props.changeFrom(date); // send date to parent VehicleList
-    
+   // console.log('Fire changeFrom in datesorting.js');
     this.setState({
       from: date
     });
- 
+
+    this.props.changeFrom(date); // send date to parent VehicleList 
   }
 
   changeTo(date) {
-
-    this.props.changeTo(date); // send date to parent VehicleList
-
+   // console.log('Fire changeTo in datesorting.js');
     this.setState({
       to: date
     });
+    this.props.changeTo(date); // send date to parent VehicleList
+
   
   }
 

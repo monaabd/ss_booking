@@ -5,7 +5,6 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-
 class CalendarInSorting extends Component {
 constructor (props) {
     super(props);
@@ -18,6 +17,7 @@ constructor (props) {
   }
 
   handleChangeStart(date) {
+    //console.log('Fire changeFrom in Calendar_in_sorting.js');
     this.setState({
       startDate: date,
     });
@@ -29,6 +29,7 @@ constructor (props) {
   }
 
 handleChangeEnd(date) {
+    // console.log('Fire changeTo in Calendar_in_sorting.js');
     this.setState({
       endDate: date,
     });

@@ -12,16 +12,18 @@ class Booking extends Component {
             startDate: moment(),
             endDate: moment(),
             car: '',
+            from: 'nothing',
+            to: 'nothing',
             showCalendar: 'none',
             vehicles: []
         };
         this.showVehicleInfo = this.showVehicleInfo.bind(this);
         this.bookedCar = this.showVehicleInfo.bind(this);
-
-		this.apiBook = this.apiBook.bind(this);
-        this.update = this.update.bind(this);
-        this.modalopen = this.modalopen.bind(this);	
-		this.modalclose = this.modalclose.bind(this);				
+		this.apiBook = this.apiBook.bind(this);	
+		this.modalopen = this.modalopen.bind(this);	
+		this.modalclose = this.modalclose.bind(this);	
+		this.changeFrom = this.changeFrom.bind(this);
+		this.changeTo = this.changeTo.bind(this);
     }
 
 
@@ -30,17 +32,12 @@ class Booking extends Component {
         console.log('showVehicleInfo() is running: GET fetch');
   		nogood = this.props.bookingid;
 
-  		// _this hold the React this. We need it here because fetch has also a 'this.'
-        const _this = this;
-
 		fetch('/vehicles')
 		.then(function(response) {
 			return response.json();
 		}).then(function(data) {
-            _this.update(data);
 			for (var i = 0; i < data.length; i++) {
-				if(nogood === data[i]._id){
-
+				if(nogood === data[i]._id){ 
 					//a div with all the selected car info
 					var selectedCarInfo = document.createElement('div');
 					selectedCarInfo.style.textAlign = 'left';
@@ -71,6 +68,7 @@ class Booking extends Component {
 					selectedCarInfo.appendChild(price);
 
 					document.getElementById("selectedCar").appendChild(selectedCarInfo);
+
 				}
 		    }// end for loop
 	    }) // end get
@@ -123,6 +121,25 @@ class Booking extends Component {
         });
     }
 
+	changeFrom(date) {
+    //console.log('Fire changeFrom in booking.js');
+    this.setState({
+      from: date
+    });
+
+    this.props.changeFrom(date); // send date to parent vehicles.js 
+  }
+
+  changeTo(date) {
+    //console.log('Fire changeTo in booking.js');
+    this.setState({
+      to: date
+    });
+    this.props.changeTo(date); // send date to parent vehicles.js 
+
+  
+  }
+
     render() {
 
 			return(
@@ -134,7 +151,8 @@ class Booking extends Component {
                 <h4>Selected dates:</h4>
                 <p>Pick-up date: {this.props.from}, Drop-off date: {this.props.to}</p>
 
-                <CalendarInBooking />
+                <CalendarInBooking changeFrom={this.changeFrom} changeTo= {this.changeTo} />
+
                 <button id="myBtn" type="submit" onClick={() => { this.modalopen() }}>Confirm</button>
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
