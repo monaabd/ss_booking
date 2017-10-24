@@ -13,7 +13,10 @@ exports.autoLoadDb = function(){
           vehicleList.forEach(vehicle =>{
             let veSchema = new Vehicle(vehicle);
             veSchema.save(function(err, response) {
-                if (err) console.log(err);
+                if (err)
+                  console.log(err);
+                else
+                  console.log(response);
             });
           });
           console.log("Vehicles added to database");

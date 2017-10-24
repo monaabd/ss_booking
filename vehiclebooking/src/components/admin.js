@@ -91,7 +91,6 @@ import UpdateCar from '../components/updateCar';
         {this.state.msgText}
         </div>
         <div className="adminContainer">
-          <h1>Vehicles view</h1>
           <table className="adminTable">
             <tbody>
               {this.printCars()}

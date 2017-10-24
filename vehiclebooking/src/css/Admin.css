@@ -6,6 +6,8 @@
 }
 .adminContainer{
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .adminForm td:first-child{
   text-align: right;
@@ -21,9 +23,10 @@
   color: yellow;
   font-size: 24px;
   position: absolute;
-  width: 300px;
+  width: 500px;
   height: auto;
-  left: 50%;
+  left: 25%;
+  word-wrap: break-word;
   background-color: black;
   border: 1px solid grey;
 }

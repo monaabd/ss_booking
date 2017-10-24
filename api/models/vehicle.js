@@ -3,8 +3,8 @@ let mongoose = require('mongoose');
 
 // Vehicle Schema
 let vehicleSchema = mongoose.Schema({
-  name:{
-    fordonstyp: String,
+  fordonstyp:{
+    type: String,
   },
   requiredDrivingLicense:{
     type: String,
@@ -26,7 +26,7 @@ let vehicleSchema = mongoose.Schema({
   },
   imgLink:{
     type: String,
-    default: '../media/car.jpg',
+    default: 'http://www.imprintables.com/content/images/thumbs/default-image_450.png',
   },
     kommentarer:{
     type: Object,
@@ -36,7 +36,7 @@ let vehicleSchema = mongoose.Schema({
   },
     dates: {
       availability: Boolean,
-      date:[{from: Number, to: Number}]
+      date: Array
     }
 });
 

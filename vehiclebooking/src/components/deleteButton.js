@@ -12,7 +12,7 @@ class DeleteButton extends Component {
  clickDelete() {
     var DelComponent = this;
     let item = JSON.stringify(this.props.carId);
-    fetch("/vehicles" + '/' + item, {
+    fetch("/vehicles/" + item, {
     method: "DELETE"
     }).then(response =>{
      DelComponent.props.printMsg("Vehicle with Id: "+item+" successfully deleted")
