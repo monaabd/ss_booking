@@ -5,11 +5,10 @@ import '../css/App.css';
 class Start extends Component {
   render() {
     return (
-      <div>
       <div id="bgcar">
-      <div id="animationIcon"></div>
+      <div id="animationIcon">
+      <img src="../media/purpleCar.png" alt="car moving but not showing" />
       </div>
-
       </div>
     );
   }
